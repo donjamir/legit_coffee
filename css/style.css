@@ -1657,6 +1657,11 @@ ul{
 .clv_team_wrapper .team_section .team_block .team_image{
 	position: relative;
 }
+.team_image img{
+	width: 300px;
+	height: 150px;
+}
+
 .clv_team_wrapper .team_section .team_block .team_details{
 	margin-bottom: -47px;
     transform: translateY(0px);
