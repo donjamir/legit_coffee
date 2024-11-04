@@ -598,7 +598,7 @@ Version: 1.0.0
 		},
 		GalleryPopup: function() {
 			$('.view_image').magnificPopup({
-			  type: 'image',
+			  type: 'video',
 			  gallery: {
 				// options for gallery
 				enabled: true
