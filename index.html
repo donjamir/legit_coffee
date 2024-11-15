@@ -241,33 +241,36 @@ Version: 1.0.0
 					<div class="coffee_about_image"><img src="images/images (7).jpg" width="100%" height="500px"></div>
 				</div>
 				<div class="col-md-6 col-lg-6">
+
 					<div class="coffee_about_content">
 						<h6>About</h6>
 						<h5>Coffee Farming</h5>
-						<p>Coffee is Uganda's top-earning export crop, playing a crucial role in the nation’s economy. In 1989, Uganda's coffee production capacity surpassed its quota of 2.3 million bags. 
-							However, economic and security challenges, along with significant smuggling of coffee beans to neighboring countries, hindered export volumes. 
-							Uganda is one of the few countries in the world with indigenous coffee, particularly Robusta, which grows wild around Lake Victoria.
+						
+						<!-- Shortened text to show initially -->
+						<p id="introText">
+						  Coffee is Uganda's top-earning export crop, playing a crucial role in the nation’s economy. In 1989, Uganda's coffee production capacity surpassed its quota of 2.3 million bags. 
+						  However, economic and security challenges, along with significant smuggling of coffee beans to neighboring countries, hindered export volumes. 
+						  Uganda is one of the few countries in the world with indigenous coffee, particularly Robusta, which grows wild around Lake Victoria.
+						  <span id="moreText" style="display:none;">
 							East Africa is renowned for producing some of the world's best coffees, primarily through cooperative models established at washing stations and wet mills. 
 							This region is considered the birthplace of coffee beans.
-						</p>
-						<br>
-						<p>
 							In Uganda, coffee has been the most important cash crop for decades, solidifying its status as the top export earner since the 1980s. 
 							The country specializes in two main types of coffee: Arabica, grown at high altitudes between 1,300 and 2,300 meters above sea level, and Robusta, 
 							cultivated at lower elevations ranging from 900 to 1,500 meters. 
 							The unique combination of high altitude, fertile soils, and traditional farming methods contributes to the exceptional quality of Ugandan coffee, 
 							which is difficult to replicate elsewhere. Arabica coffee is primarily found in the high-altitude areas of South Eastern and South Western Uganda.
-							Coffee is grown across five regions: Central, Western, South Western, Northern, and Eastern Uganda. The Eastern region includes the Busoga area (Robusta) and the Mountain Elgon region (Arabica). 
-							</p>
-							<br>
-							<p>
+							Coffee is grown across five regions: Central, Western, South Western, Northern, and Eastern Uganda. The Eastern region includes the Busoga area (Robusta) and the Mountain Elgon region (Arabica).
 							The Northern region encompasses the Mid-North (Robusta) and North-Western region (both Arabica and Robusta). The South Western and Western regions produce both varieties. For Robusta, two main varieties, Nganda and Erecta, are cultivated, with high-yielding Clonal Robusta being introduced to replace older, diseased trees. Arabica varieties include SL 28 (high altitude), SL 14 (medium altitude), KP 423 (medium), and the traditional Nyasaland, found in the Mountain Elgon and Rwenzori regions, as well as the Zeu mountains in Zombo District.
 							An estimated 1.7 million smallholder farmers across 108 districts produce coffee in Uganda. The altitudes for Robusta range from 800 to 1,400 meters, while Arabica is found between 2,300 and 6,000 meters. The high altitude of Ugandan Robusta gives it unique intrinsic quality characteristics. Additionally, sustainable and specialty coffees are increasingly sold to niche markets at premium prices compared to conventional grades.
-							</p>
-						<a href="javascript:;">Read more</a>
+						  </span>
+						</p>
+						
+						<!-- Toggle link to show more or less -->
+						<a href="javascript:void(0);" id="toggleBtn">Read more</a>
+					  
 						<img src="/images/cbag12.png" alt="Coffee farming image">
-					</div>
-					
+					  </div>
+					  
 				</div>
 			</div>
 		</div>
@@ -340,7 +343,50 @@ Version: 1.0.0
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-lg-6">
+
+
+
 					<div class="coffee_service_content">
+						<h6>Who We Are</h6>
+						<h5>Great Coffee Farming</h5>
+						
+						<!-- Shortened text to show initially -->
+						<p class="mb_4" id="introText2">
+						  The Legit Coffee Limited idea was hatched by four enthusiastic youth in 2018. Since then, plans to start a company started and Legit Coffee Limited was incorporated in 2024 and has grown to be a prominent coffee trader not only in Kayunga but throughout Uganda and the entire world.
+						  The journey has not been a bed of roses however with <strong>Determination, Desire, Dedication, Discipline and God’s grace</strong>, the Legit Coffee Limited dream became a reality.
+						  <span id="moreText2" style="display:none;">
+							The desire to positively impact the livelihoods of coffee farmers in Kayunga district and Uganda forms the DNA of the operations of Legit Coffee Limited. The dream of the company aligns with the national coffee strategy and the Vision of UCDA which is to have an Inclusive, Transformative and Sustainable Coffee Industry. We are proud to play our role in bringing Ugandan coffee to you with our skilled staff handling all transactions from the small-scale farmers until you the final buyer.
+						  </span>
+						</p>
+						
+						<!-- Toggle link to show more or less -->
+						<a href="javascript:void(0);" id="toggleBtn2">Read more</a>
+					  
+						<div class="coffee_service_section">
+						  <h3>The Best</h3>
+						  <h4>Coffee Services</h4>
+						  <div class="coffee_service_block">
+							<div class="service_icon">
+							  <span><img src="images/coffee_icon1.png" alt="Coffee Maker" /></span>
+							  <h3>Coffee Maker</h3>
+							</div>
+							<div class="service_icon">
+							  <span><img src="images/coffee_icon2.png" alt="Coffee Cup" /></span>
+							  <h3>Coffee Cup</h3>
+							</div>
+							<div class="service_icon">
+							  <span><img src="images/coffee_icon3.png" alt="Coffee Grinder" /></span>
+							  <h3>Coffee Grinder</h3>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					  
+					  
+					  
+
+
+					<!--<div class="coffee_service_content">
 						<h6>Who We Are</h6>
 						<h5>Great Coffee Farming</h5>
 						<p class="mb_4">The Legit Coffee Limited idea was hatched by four enthusiastic youth in 2018. 
@@ -367,7 +413,7 @@ Version: 1.0.0
 								</div>
 							</div>
 						</div>
-					</div>
+					</div>-->
 					
 				</div>
 				<div class="col-md-6 col-lg-6">
@@ -1364,6 +1410,43 @@ Version: 1.0.0
 <script src="js/revolution.extension.parallax.min.js"></script>
 <script src="js/revolution.extension.slideanims.min.js"></script>
 <script src="js/revolution.extension.video.min.js"></script>
+
 <script src="js/custom.js"></script>
+
+<!-- JavaScript to handle show more/less functionality -->
+<script>
+	document.getElementById('toggleBtn').addEventListener('click', function() {
+	  var moreText = document.getElementById('moreText');
+	  var btnText = document.getElementById('toggleBtn');
+  
+	  // Toggle the display of the "more" text
+	  if (moreText.style.display === 'none') {
+		moreText.style.display = 'inline';
+		btnText.textContent = 'Read less';
+	  } else {
+		moreText.style.display = 'none';
+		btnText.textContent = 'Read more';
+	  }
+	});
+  </script>
+
+
+<!-- JavaScript to handle show more/less functionality -->
+<script>
+	document.getElementById('toggleBtn2').addEventListener('click', function() {
+	  var moreText2 = document.getElementById('moreText2');
+	  var btnText2 = document.getElementById('toggleBtn2');
+  
+	  // Toggle the display of the "more" text
+	  if (moreText2.style.display === 'none') {
+		moreText2.style.display = 'inline';
+		btnText2.textContent = 'Read less';
+	  } else {
+		moreText2.style.display = 'none';
+		btnText2.textContent = 'Read more';
+	  }
+	});
+  </script>
+
 </body>
 </html>

@@ -179,7 +179,39 @@ Version: 1.0.0
 				<div class="col-md-6 col-lg-6">
 					<div class="coffee_about_image"><img src="images/images (25).png"></div>
 				</div>
+
 				<div class="coffee_about_content">
+					<h6>About</h6>
+					<h5>Coffee Farming</h5>
+				  
+					<!-- Shortened text to show initially -->
+					<p id="introText3">
+					  Coffee is Uganda's top-earning export crop, playing a crucial role in the nation’s economy. In 1989, Uganda's coffee production capacity surpassed its quota of 2.3 million bags. 
+					  However, economic and security challenges, along with significant smuggling of coffee beans to neighboring countries, hindered export volumes. 
+					  Uganda is one of the few countries in the world with indigenous coffee, particularly Robusta, which grows wild around Lake Victoria.
+					  <span id="moreText3" style="display:none;">
+						East Africa is renowned for producing some of the world's best coffees, primarily through cooperative models established at washing stations and wet mills. 
+						This region is considered the birthplace of coffee beans.
+						In Uganda, coffee has been the most important cash crop for decades, solidifying its status as the top export earner since the 1980s. 
+						The country specializes in two main types of coffee: Arabica, grown at high altitudes between 1,300 and 2,300 meters above sea level, and Robusta, 
+						cultivated at lower elevations ranging from 900 to 1,500 meters. 
+						The unique combination of high altitude, fertile soils, and traditional farming methods contributes to the exceptional quality of Ugandan coffee, 
+						which is difficult to replicate elsewhere. Arabica coffee is primarily found in the high-altitude areas of South Eastern and South Western Uganda.
+						Coffee is grown across five regions: Central, Western, South Western, Northern, and Eastern Uganda. The Eastern region includes the Busoga area (Robusta) and the Mountain Elgon region (Arabica). The Northern region encompasses the Mid-North (Robusta) and North-Western region (both Arabica and Robusta). The South Western and Western regions produce both varieties. For Robusta, two main varieties, Nganda and Erecta, are cultivated, with high-yielding Clonal Robusta being introduced to replace older, diseased trees. Arabica varieties include SL 28 (high altitude), SL 14 (medium altitude), KP 423 (medium), and the traditional Nyasaland, found in the Mountain Elgon and Rwenzori regions, as well as the Zeu mountains in Zombo District.
+						An estimated 1.7 million smallholder farmers across 108 districts produce coffee in Uganda. The altitudes for Robusta range from 800 to 1,400 meters, while Arabica is found between 2,300 and 6,000 meters. The high altitude of Ugandan Robusta gives it unique intrinsic quality characteristics. Additionally, sustainable and specialty coffees are increasingly sold to niche markets at premium prices compared to conventional grades.
+					  </span>
+					</p>
+				  
+					<!-- Toggle link to show more or less -->
+					<a href="javascript:void(0);" id="toggleBtn3">Read more</a>
+				  
+					<img src="/images/cbag12.png" alt="Coffee farming image">
+				  </div>
+				  
+				 
+				  
+
+				<!--<div class="coffee_about_content">
 					<h6>About</h6>
 					<h5>Coffee Farming</h5>
 					<p>Coffee is Uganda's top-earning export crop, playing a crucial role in the nation’s economy. In 1989, Uganda's coffee production capacity surpassed its quota of 2.3 million bags. 
@@ -197,7 +229,7 @@ Version: 1.0.0
 						</p>
 					<a href="javascript:;">Read more</a>
 					<img src="/images/cbag12.png" alt="Coffee farming image">
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</div>
@@ -912,5 +944,23 @@ Version: 1.0.0
 <script src="js/revolution.extension.slideanims.min.js"></script>
 <script src="js/revolution.extension.video.min.js"></script>
 <script src="js/custom.js"></script>
+
+ <!-- JavaScript to handle show more/less functionality -->
+ <script>
+	document.getElementById('toggleBtn3').addEventListener('click', function() {
+	  var moreText3 = document.getElementById('moreText3');
+	  var btnText3 = document.getElementById('toggleBtn3');
+  
+	  // Toggle the display of the "more" text
+	  if (moreText3.style.display === 'none') {
+		moreText3.style.display = 'inline';
+		btnText3.textContent = 'Read less';
+	  } else {
+		moreText3.style.display = 'none';
+		btnText3.textContent = 'Read more';
+	  }
+	});
+  </script>
+
 </body>
 </html>
