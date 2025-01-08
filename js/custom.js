@@ -1031,7 +1031,7 @@ $(document).ready(function(){
 $(window).on('load', function(){
 	// Preloader JS
 	$(".preloader_wrapper").fadeOut();
-	$(".preloader_inner").delay(500).fadeOut("slow");
+	$(".preloader_inner").delay(300).fadeOut("slow");
 
 	$('.gallery_grid').isotope({
 		itemSelector: '.gallery_grid_item',

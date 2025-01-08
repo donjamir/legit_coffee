@@ -1596,16 +1596,19 @@ ul{
 .gallery_grid .gallery_grid_item .gallery_image{
 	position: relative;
 	display: inline-flex;
+	
 }
 
 .gallery_grid .gallery_grid_item .gallery_image > video{
-	border-radius: 10px;
+	border-radius: 8px;
 	max-height: 400px;
+
 	
 }
 
 .gallery_image {
 	height: 400px;
+
 }
 .gallery_grid .gallery_grid_item .gallery_image .gallery_overlay {
 	position: absolute;
@@ -6532,7 +6535,7 @@ ul{
 .index_v6 .team_slide .coffee_team_details p{
 	color: #b89d64;
 	margin: 0;
-	text-transform: capitalize;
+	
 }
 .index_v6 .dairy_team_slider .slider_arrow{
 	border: none;
@@ -10722,8 +10725,8 @@ ul{
 		margin: 0px 15px;
 	}
 	.index_v3 .gallery_slide .gallery_grid .gallery_grid_item .gallery_image .gallery_overlay img{
-		width: 30px;
-		height: 30px;
+		width: 300px;
+		height: 300px;
 	}
 	.clv_right_header .clv_menu .cart_nav ul > li > .clv_cart_box, .index_v3 .clv_right_header .clv_menu .cart_nav ul > li > .clv_cart_box{
 		right: 50%;
