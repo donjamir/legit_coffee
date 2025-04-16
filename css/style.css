@@ -4772,6 +4772,7 @@ ul{
 }
 .garden_shop_slider .swiper-container{
 	padding: 20px 28px;
+	
 }
 .garden_shop_slide {
 	text-align: center;
@@ -4780,6 +4781,9 @@ ul{
 	padding: 90px 10px 27px;
 	position: relative;
 	background-color: #ffffff;
+	overflow-y: scroll;
+	height: 300px;
+	max-height: 300px;
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .garden_shop_slide:hover {
@@ -4788,12 +4792,15 @@ ul{
 .garden_shop_slide .item_image{
 	margin-bottom: 23px;
 }
+
+
 .garden_shop_slide .item_details h5 {
 	font-size: 22px;
 	font-weight: 600;
 	text-transform: capitalize;
 	color: #222222;
 }
+
 .garden_shop_slide .item_details h6 {
 	font-size: 26px;
 	font-weight: 700;
@@ -10792,7 +10799,8 @@ ul{
 		line-height: 50px;
 	}
 	.gallery_grid .gallery_grid_item{
-		width: 45%;
+		width: 30%;
+		gap: 20px;
 	}
 	.index_v2.clv_main_wrapper .clv_right_header .clv_menu{
 		justify-content: center;
