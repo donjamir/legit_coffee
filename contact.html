@@ -31,6 +31,7 @@ Version: 1.0.0
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="images/favic.png">
+
 </head>
 <body>
 	<div class="preloader_wrapper">
@@ -226,39 +227,42 @@ Version: 1.0.0
                             <div class="col-md-12 col-lg-12">
                                 <h3>send message us</h3>
                             </div>
-							<form>
-                            <div class="col-md-6 col-lg-6">
-                                <div class="form_block">
-                                    <input type="text" name="first_name" class="form_field require" placeholder="First Name" >
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6">
-                                <div class="form_block">
-                                    <input type="text" name="last_name" class="form_field require" placeholder="Last Name" >
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6">
-                                <div class="form_block">
-                                    <input type="text" name="email" class="form_field require" placeholder="Email" data-valid="email" data-error="Email should be valid." >
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6">
-                                <div class="form_block">
-                                    <input type="text" name="subject" class="form_field require" placeholder="Subject" >
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-12">
-                                <div class="form_block">
-                                    <textarea placeholder="Message" name="message" class="form_field require" ></textarea>
-									<div class="response"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-12">
-                                <div class="form_block">
-                                    <button type="button" class="clv_btn submitForm" data-type="contact">send</button>
-                                </div>
-                            </div>
+							<form id="contactForm">
+								<div class="col-md-6 col-lg-6">
+									<div class="form_block">
+										<input type="text" name="name" class="form_field require" placeholder="Name" >
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6">
+									<div class="form_block">
+										<input type="text" name="contact" class="form_field require" placeholder="Contact" >
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6">
+									<div class="form_block">
+										<input type="text" name="email" class="form_field require" placeholder="Email" >
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6">
+									<div class="form_block">
+										<input type="text" name="subject" class="form_field require" placeholder="Subject" >
+									</div>
+								</div>
+								<div class="col-md-12 col-lg-12">
+									<div class="form_block">
+										<textarea placeholder="message" name="message" class="form_field require"></textarea>
+										<div class="response"></div>
+									</div>
+								</div>
+								<div class="col-md-12 col-lg-12">
+									<div class="form_block">
+										<button type="submit" class="clv_btn">Send</button>
+									</div>
+								</div>
 							</form>
+							
+							
+							
                         </div>
                     </div>
                 </div>
@@ -759,5 +763,27 @@ function initMap() {
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY6rgnfIZd8qdQ9a3bxM4rkkCK9e7Uy-4&callback=initMap" async defer></script>
 <script src="js/custom.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+   (function(){
+      emailjs.init("678IpKg1biY8FXO6L"); // Replace with your actual public key
+   })();
+</script>
+
+<script>
+	document.getElementById('contactForm').addEventListener('submit', function(e) {
+		e.preventDefault();
+
+		emailjs.sendForm('service_5m178st', 'template_h97lydv', this)
+		.then(function(response) {
+		   console.log('SUCCESS!', response.status, response.text);
+		   alert("Email sent successfully!");
+		}, function(error) {
+		   console.log('FAILED...', error);
+		   alert("Email failed to send.");
+		});
+	});
+</script>
+
 </body>
 </html>
