@@ -2208,12 +2208,17 @@ ul{
 	background-size: cover;
 }
 .index_v6.clv_main_wrapper .clv_banner_slider .clv_slide.slide2{
-	background: url('/images/zon.jpeg') no-repeat center;
+	background: url('/images/trade.jpeg') no-repeat center;
 	background-size: cover;
 }
 
 .index_v6.clv_main_wrapper .clv_banner_slider .clv_slide.slide3{
-	background: url('/images/ron.jpeg') no-repeat center;
+	background: url('/images/zon.jpeg') no-repeat center;
+	background-size: cover;
+}
+
+.index_v6.clv_main_wrapper .clv_banner_slider .clv_slide.slide4{
+	background: url('/images/process.jpeg') no-repeat center;
 	background-size: cover;
 }
 .index_v2.clv_main_wrapper .clv_banner_slider .clv_slide:before{
