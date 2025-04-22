@@ -43,6 +43,66 @@ Version: 1.0.0
     <link rel="stylesheet" href="css/job.css" />
 
 
+	<style>
+		/* Button style */
+
+
+/* Modal backdrop */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal box */
+.modal-content {
+  background: #fff;
+  padding: 32px;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: scaleIn 0.3s ease-in-out;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+	</style>
+
 </head>
 <body>
 
@@ -78,13 +138,13 @@ Version: 1.0.0
 										<li><a href="about.html">about us</a></li>
 										<li><a href="service.html">services</a></li>
 										<!-- <li><a href="gallery.html">gallery</a></li> -->
-										<!--<li>
-											<a href="javascript:;">blog</a>
+										<li>
+											<a href="javascript:;">More</a>
 											<ul>
-												<li><a href="blog.html">blog</a></li>
-												<li><a href="blog_single.html">blog single</a></li>
+												<li><a href="gallery.html">Gallery</a></li>
+												<li><a href="#">Products</a></li>
 											</ul>
-										</li>-->
+										</li>
 										<!-- <li><a href="products.html">products</a></li> -->
 										<li><a href="contact.html">contact us</a></li>
 									</ul>
@@ -239,7 +299,7 @@ Version: 1.0.0
 					<div class="col-lg-6 col-md-6">
 						<div class="clv_heading white_heading">
 							<h3>Our Expertise in Coffee Cultivation</h3>
-							<div class="clv_underline"><img src="images/underline2.png" alt="Coffee Underline" /></div>
+							<!-- <div class="clv_underline"><img src="images/underline2.png" alt="Coffee Underline" /></div> -->
 							<p>
 								We specialize in premium coffee farming techniques that enhance flavor and quality. 
 								Our commitment to sustainable practices ensures that every cup not only tastes exceptional
@@ -379,11 +439,23 @@ Version: 1.0.0
             <div class="col-lg-6 col-md-6">
                 <div class="clv_heading">
                     <h3>Legit Coffee Projects </h3>
-                    <div class="clv_underline"><img src="images/underline3.png" alt="image" /></div>
+                    <!-- <div class="clv_underline"><img src="images/underline3.png" alt="image" /></div> -->
                     <p>
 						We provide a range of services to enhance your coffee experience, from sourcing premium beans to expert brewing methods. 
 						Explore what we offer!</p>
-						<a href="javascript:;" class="clv_btn">Projects</a>
+
+						<a href="#" class="clv_btn" id="openModalBtn">Projects</a>
+
+						<!-- Modal Structure -->
+						<div class="modal" id="projectsModal">
+						<div class="modal-content">
+							<span class="close-btn" id="closeModalBtn">&times;</span>
+							<h2>No Projects at the moment.</h2>
+							<!-- <p>Here you can showcase your latest and greatest projects.</p> -->
+							<!-- You can add more content or cards here -->
+						</div>
+						</div>
+
                 </div>
             </div>
         </div>
@@ -460,9 +532,19 @@ Version: 1.0.0
 
 		<div class="clv_heading">
 			<h3>Legit Coffee Careers and Job Opportunities</h3>
-			<div class="clv_underline"><img src="images/underline3.png" alt="image" /></div>
+			<!-- <div class="clv_underline"><img src="images/underline3.png" alt="image" /></div> -->
 			<p>We provide a range of services to enhance your coffee experience, from sourcing premium beans to expert brewing methods. Explore what we offer!</p>
-			<a href="javascript:;" class="clv_btn">Opportunities</a>
+			<a href="#" class="clv_btn" id="openOpportunitiesModal">Opportunities</a>
+
+			<!-- Opportunities Modal -->
+			<div class="modal" id="opportunitiesModal">
+			  <div class="modal-content">
+				<span class="close-btn" id="closeOpportunitiesModal">&times;</span>
+				<h2>No Opportunities at the moment.</h2>
+				<!-- <p>Discover exciting opportunities and collaborations here.</p> -->
+			  </div>
+			</div>
+			
 		</div>
 
 		
@@ -554,9 +636,9 @@ Version: 1.0.0
 								<li><a href="index.html"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Home</a></li>
 								<li><a href="about.html"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>About Us</a></li>
 								<li><a href="service.html"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Services</a></li>
-								<li><a href="gallery.html"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Gallery</a></li>
-								<li><a href="products.html"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Products</a></li>
 								<li><a href="contact.html"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Contact us</a></li>
+								<li><a href="gallery.html"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Gallery</a></li>
+								<li><a href="#"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Products</a></li>
 							</ul>
 							<!-- <ul class="useful_links float">
 								<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Ordering Services</a></li>
@@ -580,7 +662,7 @@ Version: 1.0.0
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-3 col-lg-3">
+					<!-- <div class="col-md-3 col-lg-3">
 						<div class="footer_block">
 							<div class="footer_heading">
 								<h4>latest news</h4>
@@ -631,7 +713,7 @@ Version: 1.0.0
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -667,7 +749,7 @@ Version: 1.0.0
         <div class="success_inner">
             <div class="success_img"><img src="images/success.png" alt=""></div>
             <h3>payment success</h3>
-            <img src="images/clv_underline.png" alt="">
+            <!-- <img src="images/clv_underline.png" alt=""> -->
             <p>Your order has been successfully processed! Please direct any questions you have to the store owner. Thanks for shopping</p>
             <a href="javascript:;" class="clv_btn">continue browsing</a>
             <span class="success_close">
@@ -840,5 +922,54 @@ Version: 1.0.0
 <script src="js/revolution.extension.video.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+	(function() {
+	  const openBtn = document.getElementById('openModalBtn');
+	  const modal = document.getElementById('projectsModal');
+	  const closeBtn = document.getElementById('closeModalBtn');
+	
+	  openBtn?.addEventListener('click', (e) => {
+		e.preventDefault();
+		modal.style.display = 'flex';
+	  });
+	
+	  closeBtn?.addEventListener('click', () => {
+		modal.style.display = 'none';
+	  });
+	
+	  window.addEventListener('click', (e) => {
+		if (e.target === modal) {
+		  modal.style.display = 'none';
+		}
+	  });
+	})();
+	</script>
+	
+
+	<script>
+		const openBtn = document.getElementById('openOpportunitiesModal');
+		const modal = document.getElementById('opportunitiesModal');
+		const closeBtn = document.getElementById('closeOpportunitiesModal');
+	
+		openBtn.addEventListener('click', (e) => {
+		e.preventDefault();
+		modal.style.display = 'flex';
+		});
+	
+		closeBtn.addEventListener('click', () => {
+		modal.style.display = 'none';
+		});
+	
+		// Close if clicked outside the modal content
+		window.addEventListener('click', (e) => {
+		if (e.target === modal) {
+			modal.style.display = 'none';
+		}
+		});
+	</script>
+  
+  
+
 </body>
 </html>
