@@ -24,7 +24,7 @@ Version: 1.0.0
     <link rel="stylesheet" type="text/css" href="css/font.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
-    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/magnific-popup.css"> -->
     <link rel="stylesheet" type="text/css" href="css/layers.css">
     <link rel="stylesheet" type="text/css" href="css/navigation.css">
     <link rel="stylesheet" type="text/css" href="css/settings.css">
@@ -35,69 +35,15 @@ Version: 1.0.0
 	
 	<!-- In your <head> -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
 
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="images/favic.png">
 
 
 	<style>
-		/* Button style */
-
-
-/* Modal backdrop */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1055;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(3px);
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-/* Modal box */
-.modal-content {
-  background: #fff;
-  padding: 32px;
-  border-radius: 20px;
-  max-width: 600px;
-  width: 90%;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  position: relative;
-  animation: scaleIn 0.3s ease-in-out;
-}
-
-/* Close button */
-.close-btn {
-  position: absolute;
-  top: 16px;
-  right: 24px;
-  font-size: 24px;
-  color: #555;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.close-btn:hover {
-  color: #000;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes scaleIn {
-  from { transform: scale(0.95); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
 
 .card-title {
 	font-size: 1.1rem;
@@ -109,10 +55,7 @@ Version: 1.0.0
 }
 
   /* Fix z-index of swiper */
-  .swiper {
-    position: relative;
-    z-index: 1;
-  }
+
 
   /* Ensure Bootstrap modal is on top */
  
@@ -398,18 +341,16 @@ Version: 1.0.0
 			<div class="row">
 				<div class="col-md-6 col-lg-6">
 
+					<div class=" p-4 mb-4" x-data="{ showMore: false }">
+					<h5 class="fw-bold mb-3">About Uganda Coffee</h5>
+					<div class="position-relative" style="max-height: 350px; overflow: hidden;" 
+						:style="showMore ? 'max-height: 350px; overflow-y:auto;' : 'max-height: 350px; overflow: hidden;'">
 
-
-					<div class="coffee_service_content">
-						<h6>About Coffee</h6>
-						<!-- <h5></h5> -->
-						
-						<!-- Shortened text to show initially -->
-						<p class="mb_4" id="introText">
-						  Coffee is Uganda's top-earning export crop, playing a crucial role in the nation’s economy. In 1989, Uganda's coffee production capacity surpassed its quota of 2.3 million bags. 
-						  However, economic and security challenges, along with significant smuggling of coffee beans to neighboring countries, hindered export volumes. 
-						  Uganda is one of the few countries in the world with indigenous coffee, particularly Robusta, which grows wild around Lake Victoria.
-						  <span id="moreText" style="display:none;">
+						<p class="mb-0" id="introText">
+						Coffee is Uganda's top-earning export crop, playing a crucial role in the nation’s economy. In 1989, Uganda's coffee production capacity surpassed its quota of 2.3 million bags. 
+						However, economic and security challenges, along with significant smuggling of coffee beans to neighboring countries, hindered export volumes. 
+						Uganda is one of the few countries in the world with indigenous coffee, particularly Robusta, which grows wild around Lake Victoria.
+						<span id="moreText">
 							East Africa is renowned for producing some of the world's best coffees, primarily through cooperative models established at washing stations and wet mills. 
 							This region is considered the birthplace of coffee beans.
 							In Uganda, coffee has been the most important cash crop for decades, solidifying its status as the top export earner since the 1980s. 
@@ -420,13 +361,16 @@ Version: 1.0.0
 							Coffee is grown across five regions: Central, Western, South Western, Northern, and Eastern Uganda. The Eastern region includes the Busoga area (Robusta) and the Mountain Elgon region (Arabica).
 							The Northern region encompasses the Mid-North (Robusta) and North-Western region (both Arabica and Robusta). The South Western and Western regions produce both varieties. For Robusta, two main varieties, Nganda and Erecta, are cultivated, with high-yielding Clonal Robusta being introduced to replace older, diseased trees. Arabica varieties include SL 28 (high altitude), SL 14 (medium altitude), KP 423 (medium), and the traditional Nyasaland, found in the Mountain Elgon and Rwenzori regions, as well as the Zeu mountains in Zombo District.
 							An estimated 1.7 million smallholder farmers across 108 districts produce coffee in Uganda. The altitudes for Robusta range from 800 to 1,400 meters, while Arabica is found between 2,300 and 6,000 meters. The high altitude of Ugandan Robusta gives it unique intrinsic quality characteristics. Additionally, sustainable and specialty coffees are increasingly sold to niche markets at premium prices compared to conventional grades.
-						  </span>
+						</span>
 						</p>
-						
-						<!-- Toggle link to show more or less -->
-						<a href="javascript:void(0);" id="toggleBtn">Read more</a>
-					  </div>	
+					</div>
+
+					<div class="text-end mt-2">
+						<button @click="showMore = !showMore" x-text="showMore ? 'Read Less' : 'Read More'"></button>
+					</div>
+					</div>
 				</div>
+
 				<div class="col-md-6 col-lg-6">
 					<div class="coffee_service_image">
 						<img src="images/seed3.jpeg"  width="100%" height="500px" alt="image" />
@@ -442,44 +386,34 @@ Version: 1.0.0
 			<div class="row">
 				<div class="col-md-6 col-lg-6">
 
+						<div class=" p-4 mb-4" x-data="{ showMore: false }">
+					<h5 class="fw-bold mb-3">Who we are</h5>
+					<div class="position-relative" style="max-height: 350px; overflow: hidden;" 
+						:style="showMore ? 'max-height: 350px; overflow-y:auto;' : 'max-height: 350px; overflow: hidden;'">
 
-
-					<div class="coffee_service_content">
-						<h6>Who We Are</h6>
-						<h5>Great Coffee</h5>
-						
-						<!-- Shortened text to show initially -->
-						<p class="mb_4" id="introText2">
-						  The Legit Coffee Limited idea was hatched by four enthusiastic youth in 2018. Since then, plans to start a company started and Legit Coffee Limited was incorporated in 2024 and has grown to be a prominent coffee trader not only in Kayunga but throughout Uganda and the entire world.
-						  The journey has not been a bed of roses however with <strong>Determination, Desire, Dedication, Discipline and God’s grace</strong>, the Legit Coffee Limited dream became a reality.
-						  <span id="moreText2" style="display:none;">
-							The desire to positively impact the livelihoods of coffee farmers in Kayunga district and Uganda forms the DNA of the operations of Legit Coffee Limited. The dream of the company aligns with the national coffee strategy and the Vision of UCDA which is to have an Inclusive, Transformative and Sustainable Coffee Industry. We are proud to play our role in bringing Ugandan coffee to you with our skilled staff handling all transactions from the small-scale farmers until you the final buyer.
-						  </span>
+						<p class="mb-0" id="introText">
+						Coffee is Uganda's top-earning export crop, playing a crucial role in the nation’s economy. In 1989, Uganda's coffee production capacity surpassed its quota of 2.3 million bags. 
+						However, economic and security challenges, along with significant smuggling of coffee beans to neighboring countries, hindered export volumes. 
+						Uganda is one of the few countries in the world with indigenous coffee, particularly Robusta, which grows wild around Lake Victoria.
+						<span id="moreText">
+							East Africa is renowned for producing some of the world's best coffees, primarily through cooperative models established at washing stations and wet mills. 
+							This region is considered the birthplace of coffee beans.
+							In Uganda, coffee has been the most important cash crop for decades, solidifying its status as the top export earner since the 1980s. 
+							The country specializes in two main types of coffee: Arabica, grown at high altitudes between 1,300 and 2,300 meters above sea level, and Robusta, 
+							cultivated at lower elevations ranging from 900 to 1,500 meters. 
+							The unique combination of high altitude, fertile soils, and traditional farming methods contributes to the exceptional quality of Ugandan coffee, 
+							which is difficult to replicate elsewhere. Arabica coffee is primarily found in the high-altitude areas of South Eastern and South Western Uganda.
+							Coffee is grown across five regions: Central, Western, South Western, Northern, and Eastern Uganda. The Eastern region includes the Busoga area (Robusta) and the Mountain Elgon region (Arabica).
+							The Northern region encompasses the Mid-North (Robusta) and North-Western region (both Arabica and Robusta). The South Western and Western regions produce both varieties. For Robusta, two main varieties, Nganda and Erecta, are cultivated, with high-yielding Clonal Robusta being introduced to replace older, diseased trees. Arabica varieties include SL 28 (high altitude), SL 14 (medium altitude), KP 423 (medium), and the traditional Nyasaland, found in the Mountain Elgon and Rwenzori regions, as well as the Zeu mountains in Zombo District.
+							An estimated 1.7 million smallholder farmers across 108 districts produce coffee in Uganda. The altitudes for Robusta range from 800 to 1,400 meters, while Arabica is found between 2,300 and 6,000 meters. The high altitude of Ugandan Robusta gives it unique intrinsic quality characteristics. Additionally, sustainable and specialty coffees are increasingly sold to niche markets at premium prices compared to conventional grades.
+						</span>
 						</p>
-						
-						<!-- Toggle link to show more or less -->
-						<a href="javascript:void(0);" id="toggleBtn2">Read more</a>
-					  
-						<!-- <div class="coffee_service_section">
-						  <h3>The Best</h3>
-						  <h4>Coffee Services</h4>
-						  <div class="coffee_service_block">
-							<div class="service_icon">
-							  <span><img src="images/coffee_icon1.png" alt="Coffee Maker" /></span>
-							  <h3>Coffee Maker</h3>
-							</div>
-							<div class="service_icon">
-							  <span><img src="images/coffee_icon2.png" alt="Coffee Cup" /></span>
-							  <h3>Coffee Cup</h3>
-							</div>
-							<div class="service_icon">
-							  <span><img src="images/coffee_icon3.png" alt="Coffee Grinder" /></span>
-							  <h3>Coffee Grinder</h3>
-							</div>
-						  </div>
-						</div> -->
-					  </div>
-					  
+					</div>
+
+					<div class="text-end mt-2">
+						<button @click="showMore = !showMore" x-text="showMore ? 'Read Less' : 'Read More'"></button>
+					</div>
+					</div>
 					  
 					  
 
@@ -525,97 +459,6 @@ Version: 1.0.0
 
 
 	<!--Team-->
-
-
-<!-- Francis Kitaka Modal -->
-<div class="modal fade" id="bioFrancis" tabindex="-1" aria-labelledby="bioFrancisLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0 shadow rounded-4">
-      <div class="modal-body p-4">
-        <div class="row align-items-start">
-          <div class="col-md-4 text-center mb-3 mb-md-0">
-            <img src="/images/y.jpg" alt="Francis Kitaka" class="img-fluid rounded-3" style="max-height: 280px; object-fit: cover;">
-          </div>
-          <div class="col-md-8">
-            <h5 class="fw-bold mb-1">Francis Kitaka</h5>
-            <p class="text-muted mb-3">Chief Executive Officer (CEO)</p>
-            <p>Francis is a retired finance professional and teacher with vast experience in finance and a strong foundation in financial management, risk management, audit, and financial reporting. He is a strategic thinker with exceptional analytical skills and the ability to synthesize financial information. He has served banks, donor-funded projects, NGOs, and private institutions. In the coffee industry, Francis has acquired extensive knowledge of the value chain through research and hands-on experience.</p>
-          </div>
-		<button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Abdul Suleiman Modal -->
-<div class="modal fade" id="bioAbdul" tabindex="-1" aria-labelledby="bioAbdulLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0 shadow rounded-4">
-      <div class="modal-body p-4">
-        <div class="row align-items-start">
-          <div class="col-md-4 text-center mb-3 mb-md-0">
-            <img src="images/x.png" alt="Abdul Suleiman" class="img-fluid rounded-3" style="max-height: 280px; object-fit: cover;">
-          </div>
-          <div class="col-md-8">
-            <h5 class="fw-bold mb-1">Abdul Suleiman</h5>
-            <p class="text-muted mb-3">Chief Operating Officer (COO)</p>
-            <p>Abdul has over a decade of experience in the coffee industry. His passion, knowledge, and record as a coffee trader make him a critical asset to Legit Coffee Ltd. He builds strong relationships across the entire coffee value chain, from humble farmers to senior buyers. Known affectionately as the "Bean Man", Abdul ensures quality by closely understanding buyers' needs and farmer challenges alike.</p>
-          </div>
-		   <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Nathan Odur Modal -->
-<div class="modal fade" id="bioNathan" tabindex="-1" aria-labelledby="bioNathanLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0 shadow rounded-4">
-      <div class="modal-body p-4">
-        <div class="row align-items-start">
-          <div class="col-md-4 text-center mb-3 mb-md-0">
-            <img src="images/b.png" alt="Nathan Odur" class="img-fluid rounded-3" style="max-height: 280px; object-fit: cover;">
-          </div>
-          <div class="col-md-8">
-            <h5 class="fw-bold mb-1">Nathan Odur</h5>
-            <p class="text-muted mb-3">Senior Financial Advisor (SFA)</p>
-            <p>Nathan is a certified ACCA professional with extensive financial knowledge. He oversees financial planning and management at Legit Coffee Ltd. Prior to this, he worked for 7 years at a top-tier audit firm, rising to Manager level. He has experience in finance, audit, and advisory services — including developing anti-money laundering policies and reviewing internal controls for global investment firms.</p>
-          </div>
-		   <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Sharon Modal -->
-<div class="modal fade" id="bioSharon" tabindex="-1" aria-labelledby="bioSharonLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0 shadow rounded-4">
-      <div class="modal-body p-4">
-        <div class="row align-items-start">
-          <div class="col-md-4 text-center mb-3 mb-md-0">
-            <img src="images/z.jpg" alt="Nansubuga Regina Sharon" class="img-fluid rounded-3" style="max-height: 280px; object-fit: cover;">
-          </div>
-          <div class="col-md-8">
-            <h5 class="fw-bold mb-1">Nansubuga Regina Sharon</h5>
-            <p class="text-muted mb-3">Head Of Administration (HOA)</p>
-            <p>Sharon is a teacher by profession with a deep interest in the coffee industry. She dedicates her time to interacting with coffee farmers to understand their challenges and provide practical interventions. Her focus on supporting small-scale farmers helps build long-term trust, quality assurance, and reliable stock relationships for Legit Coffee Ltd.</p>
-          </div>
-			<button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-	
 	<div class="dairy_team_wrapper clv_section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -635,57 +478,56 @@ Version: 1.0.0
 							<div class="swiper-wrapper">
 								
 								<div class="swiper-slide">
-	<div class="card team_slide shadow-sm border-0 rounded-4 overflow-hidden h-200 text-center">
-		<div class="team_image">
-			<img src="/images/y.jpg" alt="Francis Kitaka" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;">
-		</div>
-		<div class="card-body coffee_team_details">
-			<h5 class="card-title mb-1 fw-bold">Francis Kitaka</h5>
-			<p class="text-muted mb-0">Chief Executive Officer (CEO)</p>
-			<button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#bioFrancis">Read Bio</button>
-		</div>
-	</div>
-</div>
+									<div class="card team_slide shadow-sm border-0 rounded-4 overflow-hidden h-200 text-center">
+										<div class="team_image">
+											<img src="/images/y.jpg" alt="Francis Kitaka" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;">
+										</div>
+										<div class="card-body coffee_team_details">
+											<h5 class="card-title mb-1 fw-bold">Francis Kitaka</h5>
+											<p class="text-muted mb-0">Chief Executive Officer (CEO)</p>
+										</div>
+										<button class="btn btn-outline-primary btn-sm mb-3 mt-2" data-bs-toggle="modal" data-bs-target="#bioFrancis">Read Bio</button>
+									</div>
+								</div>
 
-<div class="swiper-slide">
-	<div class="card team_slide shadow-sm border-0 rounded-4 overflow-hidden h-200 text-center">
-		<div class="team_image">
-			<img src="images/x.png" alt="Abdul Suleiman" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;">
-		</div>
-		<div class="card-body coffee_team_details">
-			<h5 class="card-title mb-1 fw-bold">Abdul Suleiman</h5>
-			<p class="text-muted mb-0">Chief Operating Officer (COO)</p>
-			<button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#bioAbdul">Read Bio</button>
-		</div>
-	</div>
-</div>
+								<div class="swiper-slide">
+									<div class="card team_slide shadow-sm border-0 rounded-4 overflow-hidden h-200 text-center">
+										<div class="team_image">
+											<img src="images/x.png" alt="Abdul Suleiman" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;">
+										</div>
+										<div class="card-body coffee_team_details">
+											<h5 class="card-title mb-1 fw-bold">Abdul Suleiman</h5>
+											<p class="text-muted mb-0">Chief Operating Officer (COO)</p>
+										</div>
+										<button class="btn btn-outline-primary btn-sm mb-3 mt-2" data-bs-toggle="modal" data-bs-target="#bioAbdul">Read Bio</button>
+									</div>
+								</div>
 
-<div class="swiper-slide">
-	<div class="card team_slide shadow-sm border-0 rounded-4 overflow-hidden h-200 text-center">
-		<div class="team_image">
-			<img src="images/b.png" alt="Nathan Odur" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;">
-		</div>
-		<div class="card-body coffee_team_details">
-			<h5 class="card-title mb-1 fw-bold">Nathan Odur</h5>
-			<p class="text-muted mb-0">Senior Financial Advisor (SFA)</p>
-			<button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#bioNathan">Read Bio</button>
-		</div>
-	</div>
-</div>
+								<div class="swiper-slide">
+									<div class="card team_slide shadow-sm border-0 rounded-4 overflow-hidden h-200 text-center">
+										<div class="team_image">
+											<img src="images/b.png" alt="Nathan Odur" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;">
+										</div>
+										<div class="card-body coffee_team_details">
+											<h5 class="card-title mb-1 fw-bold">Nathan Odur</h5>
+											<p class="text-muted mb-0">Senior Financial Advisor (SFA)</p>
+										</div>
+										<button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#bioNathan">Read Bio</button>
+									</div>
+								</div>
 
-<div class="swiper-slide">
-	<div class="card team_slide shadow-sm border-0 rounded-4 overflow-hidden h-200 text-center">
-		<div class="team_image">
-			<img src="images/z.jpg" alt="Nansubuga Regina Sharon" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;">
-		</div>
-		<div class="card-body coffee_team_details">
-			<h5 class="card-title mb-1 fw-bold">Nansubuga Regina Sharon</h5>
-			<p class="text-muted mb-0">Head Of Administration (HOA)</p>
-			<button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#bioSharon">Read Bio</button>
-
-		</div>
-	</div>
-</div>
+								<div class="swiper-slide">
+									<div class="card team_slide shadow-sm border-0 rounded-4 overflow-hidden h-200 text-center">
+										<div class="team_image">
+											<img src="images/z.jpg" alt="Nansubuga Regina Sharon" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;">
+										</div>
+										<div class="card-body coffee_team_details">
+											<h5 class="card-title mb-1 fw-bold">Nansubuga Regina Sharon</h5>
+											<p class="text-muted mb-0">Head Of Administration (HOA)</p>
+										</div>
+										<button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#bioSharon">Read Bio</button>
+									</div>
+								</div>
 
 								
 							</div>
@@ -714,8 +556,12 @@ Version: 1.0.0
 			</div>
 		</div>
 	</div>
+
+
+
+
 	<!--Testimonial-->
-	<div class="coffee_testimonial_wrapper clv_section">
+	<div class="coffee_testimonial_wrapper ">
 		<!-- <div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-6 col-md-6">
@@ -903,194 +749,172 @@ Version: 1.0.0
 		</div>
 	</div>
 
-	<!--Partner
-	<div class="clv_partner_wrapper clv_section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="partner_slider">
-						<div class="swiper-container">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<div class="partner_slide">
-										<div class="partner_image">
-											<span>
-												<img src="" alt="image">
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="partner_slide">
-										<div class="partner_image">
-											<span>
-												<img src="" alt="image">
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="partner_slide">
-										<div class="partner_image">
-											<span>
-												<img src="" alt="image">
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="partner_slide">
-										<div class="partner_image">
-											<span>
-												<img src="" alt="image">
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="partner_slide">
-										<div class="partner_image">
-											<span>
-												<img src="" alt="image">
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="partner_slide">
-										<div class="partner_image">
-											<span>
-												<img src="" alt="image">
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="partner_slide">
-										<div class="partner_image">
-											<span>
-												<img src="" alt="image">
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="partner_slide">
-										<div class="partner_image">
-											<span>
-												<img src="" alt="image">
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="partner_slide">
-										<div class="partner_image">
-											<span>
-												<img src="" alt="image">
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="partner_slide">
-										<div class="partner_image">
-											<span>
-												<img src="" alt="image">
-											</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>-->
-						<!-- Add Arrows -->
-						<span class="slider_arrow partner_left left_arrow">
-							<svg 
-							 xmlns="http://www.w3.org/2000/svg"
-							 xmlns:xlink="http://www.w3.org/1999/xlink"
-							 width="10px" height="15px">
-							<path fill-rule="evenodd"  fill="rgb(226, 226, 226)"
-							 d="M0.324,8.222 L7.117,14.685 C7.549,15.097 8.249,15.097 8.681,14.685 C9.113,14.273 9.113,13.608 8.681,13.197 L2.670,7.478 L8.681,1.760 C9.113,1.348 9.113,0.682 8.681,0.270 C8.249,-0.139 7.548,-0.139 7.116,0.270 L0.323,6.735 C0.107,6.940 -0.000,7.209 -0.000,7.478 C-0.000,7.747 0.108,8.017 0.324,8.222 Z"/>
-							</svg>
-						</span>
-						<span class="slider_arrow partner_right right_arrow">
-							<svg 
-							 xmlns="http://www.w3.org/2000/svg"
-							 xmlns:xlink="http://www.w3.org/1999/xlink"
-							 width="19px" height="25px">
-							<path fill-rule="evenodd" fill="rgb(226, 226, 226)"
-							 d="M13.676,13.222 L6.883,19.685 C6.451,20.097 5.751,20.097 5.319,19.685 C4.887,19.273 4.887,18.608 5.319,18.197 L11.329,12.478 L5.319,6.760 C4.887,6.348 4.887,5.682 5.319,5.270 C5.751,4.861 6.451,4.861 6.884,5.270 L13.676,11.735 C13.892,11.940 14.000,12.209 14.000,12.478 C14.000,12.747 13.892,13.017 13.676,13.222 Z"/>
-							</svg>
-						</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	
-		<!--Footer-->
-<div class="clv_footer_wrapper clv_section" style="color: #fff; padding: 60px 0;">
+<!-- Footer -->
+<footer class="clv_footer_wrapper clv_section bg-dark text-white pt-5 pb-4">
     <div class="container">
-        <div class="row text-md-star justify-content-center">
+        <div class="row">
 
-            <!-- Brand & Description -->
-            <div class="col-md-3 col-lg-3 mb-4">
+            <!-- Brand & About -->
+            <div class="col-md-3 mb-4">
                 <div class="footer_block">
                     <div class="footer_logo mb-3">
-                        <a href="index.html" class="text-decoration-none"><img src="images/footer_logo.png" alt="Legit Coffee Logo" width="180" /></a>
+                        <a href="index.html"><img src="images/footer_logo.png" alt="Legit Coffee Logo" width="180" /></a>
                     </div>
-                    <p>Legit Coffee Ltd is a Ugandan coffee company committed to providing high-quality coffee products while empowering local farmers and promoting sustainability.</p>
-                    <ul class="agri_social_links d-flex justify-content-center justify-content-md-start mt-3">
-                        <li class="me-2"><a href="#" class="text-decoration-none"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li class="me-2"><a href="#" class="text-decoration-none"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li class="me-2"><a href="#" class="text-decoration-none"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="text-decoration-none"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    <p class="text-white">
+						Legit Coffee Ltd is a Ugandan coffee brand dedicated to providing premium-quality coffee 
+						while empowering local farmers and promoting sustainability.</p>
+                    <ul class="agri_social_links list-inline mt-3">
+                        <li class="list-inline-item"><a href="#" class="text-white text-decoration-none"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white text-decoration-none"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white text-decoration-none"><i class="fab fa-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white text-decoration-none"><i class="fab fa-youtube-play"></i></a></li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Location Info -->
-            <div class="col-md-3 col-lg-3 mb-4">
+            <!-- Contact Info -->
+            <div class="col-md-3 mb-4">
                 <div class="footer_block">
-                    <div class="footer_heading mb-3">
-                        <h4 class="text-white">Location</h4>
-                    </div>
-                    <p>Namaliri, Kayunga Road</p>
-                    <p>Tel: (+256) 788935300<br>Tel: (+256) 703607845</p>
-                    <p>Email: <a href="mailto:info@legitcoffeeug.com" style="color: #fff;" class="text-decoration-none">info@legitcoffeeug.com</a></p>
+                    <h5 class="footer_heading mb-3">Contact Us</h5>
+                    <p class="text-white"><i class="fa fa-map-marker me-2"></i> Namaliri, Kayunga Road</p>
+                    <p class="text-white"><i class="fa fa-phone me-2"></i> (+256) 788 935 300 / 703 607 845</p>
+                    <p class="text-white"><i class="fa fa-envelope me-2"></i> <a href="mailto:info@legitcoffeeug.com" class="text-white text-decoration-none">info@legitcoffeeug.com</a></p>
                 </div>
             </div>
 
             <!-- Useful Links -->
-            <div class="col-md-3 col-lg-3 mb-4">
+            <div class="col-md-3 mb-4">
                 <div class="footer_block">
-                    <div class="footer_heading mb-3">
-                        <h4 class="text-white">Useful Links</h4>
-                    </div>
-                    <ul class="useful_links list-unstyled">
-                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right me-2"></i>Home</a></li>
-                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right me-2"></i>About Us</a></li>
-                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right me-2"></i>Contact</a></li>
-                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right me-2"></i>Services</a></li>
-                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right me-2"></i>Gallery</a></li>
+                    <h5 class="footer_heading mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>Home</a></li>
+                        <li><a href="#" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>About Us</a></li>
+                        <li><a href="#" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>Our Products</a></li>
+                        <li><a href="#" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>Gallery</a></li>
+                        <li><a href="#" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>Contact</a></li>
                     </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="col-md-3 mb-4">
+                <div class="footer_block">
+                    <h5 class="footer_heading mb-3">Stay Updated</h5>
+                    <p class="text-white">Subscribe to our newsletter to receive updates on new arrivals, promotions, and coffee stories.</p>
+                    <form action="#" method="post" class="d-flex">
+                        <input type="email" name="email" class="form-control me-2" placeholder="Your email" required>
+                        <button class="btn btn-outline-light" type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
 
         </div>
 
         <!-- Footer Bottom -->
-        <div class="row mt-4">
-            <div class="col-12 text-center">
-                <p class="mb-0" style="color: #ccc;">&copy; <script>document.write(new Date().getFullYear())</script> Legit Coffee Ltd. All Rights Reserved.</p>
+        <div class="row border-top border-secondary pt-3 mt-3">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0">&copy; <script>document.write(new Date().getFullYear())</script> Legit Coffee Ltd. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                <a href="#" class="text-white text-decoration-none">Terms of Service</a>
             </div>
         </div>
     </div>
+</footer>
+
+
+
+<!-- Francis Kitaka Modal -->
+<div class="modal fade" id="bioFrancis" tabindex="-1" aria-labelledby="bioFrancisLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow rounded-2">
+      <div class="modal-body">
+        <div class="row align-items-start">
+          <div class="col-md-4 text-center mb-3 mb-md-0">
+            <img src="/images/y.jpg" alt="Francis Kitaka" class="img-fluid rounded-3" style="max-height: 280px; object-fit: cover;">
+          </div>
+          <div class="col-md-12">
+            <h5 class="fw-bold mb-1">Francis Kitaka</h5>
+            <p class="text-muted mb-3">Chief Executive Officer (CEO)</p>
+            <p>Francis is a retired finance professional and teacher with vast experience in finance and a strong foundation in financial management, risk management, audit, and financial reporting. He is a strategic thinker with exceptional analytical skills and the ability to synthesize financial information. He has served banks, donor-funded projects, NGOs, and private institutions. In the coffee industry, Francis has acquired extensive knowledge of the value chain through research and hands-on experience.</p>
+          </div>
+		<button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-		
+<!-- Abdul Suleiman Modal -->
+<div class="modal fade" id="bioAbdul" tabindex="-1" aria-labelledby="bioAbdulLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow rounded-2">
+      <div class="modal-body p-4">
+        <div class="row align-items-start">
+          <div class="col-md-4 text-center mb-3 mb-md-0">
+            <img src="images/x.png" alt="Abdul Suleiman" class="img-fluid rounded-3" style="max-height: 280px; object-fit: cover;">
+          </div>
+          <div class="col-md-8">
+            <h5 class="fw-bold mb-1">Abdul Suleiman</h5>
+            <p class="text-muted mb-3">Chief Operating Officer (COO)</p>
+            <p>Abdul has over a decade of experience in the coffee industry. His passion, knowledge, and record as a coffee trader make him a critical asset to Legit Coffee Ltd. He builds strong relationships across the entire coffee value chain, from humble farmers to senior buyers. Known affectionately as the "Bean Man", Abdul ensures quality by closely understanding buyers' needs and farmer challenges alike.</p>
+          </div>
+		   <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-	<!--Popup-->
+<!-- Nathan Odur Modal -->
+<div class="modal fade" id="bioNathan" tabindex="-1" aria-labelledby="bioNathanLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow rounded-4">
+      <div class="modal-body p-4">
+        <div class="row align-items-start">
+          <div class="col-md-4 text-center mb-3 mb-md-0">
+            <img src="images/b.png" alt="Nathan Odur" class="img-fluid rounded-3" style="max-height: 280px; object-fit: cover;">
+          </div>
+          <div class="col-md-8">
+            <h5 class="fw-bold mb-1">Nathan Odur</h5>
+            <p class="text-muted mb-3">Senior Financial Advisor (SFA)</p>
+            <p>Nathan is a certified ACCA professional with extensive financial knowledge. He oversees financial planning and management at Legit Coffee Ltd. Prior to this, he worked for 7 years at a top-tier audit firm, rising to Manager level. He has experience in finance, audit, and advisory services — including developing anti-money laundering policies and reviewing internal controls for global investment firms.</p>
+          </div>
+		   <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sharon Modal -->
+<div class="modal fade" id="bioSharon" tabindex="-1" aria-labelledby="bioSharonLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow rounded-4">
+      <div class="modal-body p-4">
+        <div class="row align-items-start">
+          <div class="col-md-4 text-center mb-3 mb-md-0">
+            <img src="images/z.jpg" alt="Nansubuga Regina Sharon" class="img-fluid rounded-3" style="max-height: 280px; object-fit: cover;">
+          </div>
+          <div class="col-md-8">
+            <h5 class="fw-bold mb-1">Nansubuga Regina Sharon</h5>
+            <p class="text-muted mb-3">Head Of Administration (HOA)</p>
+            <p>Sharon is a teacher by profession with a deep interest in the coffee industry. She dedicates her time to interacting with coffee farmers to understand their challenges and provide practical interventions. Her focus on supporting small-scale farmers helps build long-term trust, quality assurance, and reliable stock relationships for Legit Coffee Ltd.</p>
+          </div>
+			<button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 
 	<div class="search_box">
 		<div class="search_block">
@@ -1280,6 +1104,8 @@ Version: 1.0.0
 <!-- Before closing-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
 
 <!--Main js file Style-->
 <script src="js/jquery.js"></script>
@@ -1362,6 +1188,32 @@ Version: 1.0.0
 	  });
 	})();
 </script>
+
+
+<script>
+  var swiper = new Swiper(".dairy_team_slider .swiper-container", {
+    loop: true,
+    autoplay: {
+      delay: 3000, // Adjust delay as needed (in ms)
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".team_right",
+      prevEl: ".team_left",
+    },
+    slidesPerView: 1,
+    spaceBetween: 30,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 4,
+      }
+    }
+  });
+</script>
+
 
 </body>
 </html>
