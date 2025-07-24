@@ -2204,7 +2204,7 @@ ul{
 	left: 25px;
 }
 .index_v6.clv_main_wrapper .clv_banner_slider .clv_slide{
-	background: url('/images/man.jpeg') no-repeat center;
+	background: url('/images/new_legit/ren5.jpg') no-repeat center;
 	background-size: cover;
 }
 .index_v6.clv_main_wrapper .clv_banner_slider .clv_slide.slide2{
@@ -6507,19 +6507,19 @@ ul{
 	bottom: 0;
 	height: fit-content;
 	left: 0;
-	overflow-y: hidden;
+	/* overflow-y: hidden; */
 	right: 0;
 	padding: 6px;
 	background-color: #ffffff;
-	height: 200px;
-	overflow: auto;
-	scrollbar-width: thin;
+	height: 100px;
+	/* overflow: auto; */
+	/* scrollbar-width: thin; */
 	border-radius:5px ;
 	text-align: center;
-	margin-top: 10rem;
+	margin-top: 5rem;
     z-index: 2;
 }
-.index_v6 .team_slide .coffee_team_details .call_icon{
+/* .index_v6 .team_slide .coffee_team_details .call_icon{
     width: 40px;
     height: 40px;
     margin: 0 auto;
@@ -6532,12 +6532,12 @@ ul{
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
-}
+} */
 
 
-.index_v6 .team_slide:hover .coffee_team_details .call_icon{
+/* .index_v6 .team_slide:hover .coffee_team_details .call_icon{
 	background-color: #b89d64;
-}
+} */
 .index_v6 .team_slide .coffee_team_details .call_icon svg path{
 	fill: #ffffff !important;
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;

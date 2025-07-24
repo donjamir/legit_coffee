@@ -20,7 +20,7 @@ Version: 1.0.0
     <meta name="MobileOptimized" content="320">
 	
     <!--Start Style -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" type="text/css" href="css/font.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
@@ -33,6 +33,8 @@ Version: 1.0.0
     <link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="css/app.css">
 	
+	<!-- In your <head> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="images/favic.png">
@@ -46,7 +48,7 @@ Version: 1.0.0
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 1055;
   left: 0;
   top: 0;
   width: 100%;
@@ -96,6 +98,25 @@ Version: 1.0.0
   to { transform: scale(1); opacity: 1; }
 }
 
+
+.card-title {
+	font-size: 1.1rem;
+}
+.card:hover {
+	transform: translateY(-5px);
+	transition: all 0.3s ease;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+  /* Fix z-index of swiper */
+  .swiper {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Ensure Bootstrap modal is on top */
+ 
+
 	</style>
 
 </head>
@@ -130,19 +151,19 @@ Version: 1.0.0
 							<div class="clv_menu">
 								<div class="clv_menu_nav">
 									<ul>
-										<li><a href="index.html">home</a></li>
-										<li><a href="about.html">about us</a></li>
-										<li><a href="service.html">services</a></li>
+										<li><a href="index.html" class="text-decoration-none">home</a></li>
+										<li><a href="about.html" class="text-decoration-none">about us</a></li>
+										<li><a href="service.html" class="text-decoration-none" >services</a></li>
 										<!-- <li><a href="gallery.html">gallery</a></li> -->
 										
 										<!-- <li><a href="products.html">products</a></li> -->
-										<li><a href="contact.html">contact us</a></li>
+										<li><a href="contact.html" class="text-decoration-none">contact us</a></li>
 
 										<li>
-											<a href="javascript:;">More</a>
+											<a href="javascript:;" class="text-decoration-none">More</a>
 											<ul>
-												<li><a href="gallery.html">Gallery</a></li>
-												<li><a href="#">Products</a></li>
+												<li><a  href="gallery.html" class="text-decoration-none">Gallery</a></li>
+												<!-- <li><a href="#">Products</a></li> -->
 											</ul>
 										</li>
 									</ul>
@@ -370,21 +391,21 @@ Version: 1.0.0
 			</span>  
 		</div>
 	</div>
-	<!--About-->
-	<div class="coffee_about_wrapper clv_section">
+
+		<!--Services-->
+	<div class="coffee_service_wrapper clv_section">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-lg-6">
-					<div class="coffee_about_image"><img src="images/seed3.jpeg" width="100%" height="500px"></div>
-				</div>
-				<div class="col-md-6 col-lg-6">
 
-					<div class="coffee_about_content">
+
+
+					<div class="coffee_service_content">
 						<h6>About Coffee</h6>
 						<!-- <h5></h5> -->
 						
 						<!-- Shortened text to show initially -->
-						<p id="introText">
+						<p class="mb_4" id="introText">
 						  Coffee is Uganda's top-earning export crop, playing a crucial role in the nation’s economy. In 1989, Uganda's coffee production capacity surpassed its quota of 2.3 million bags. 
 						  However, economic and security challenges, along with significant smuggling of coffee beans to neighboring countries, hindered export volumes. 
 						  Uganda is one of the few countries in the world with indigenous coffee, particularly Robusta, which grows wild around Lake Victoria.
@@ -404,78 +425,18 @@ Version: 1.0.0
 						
 						<!-- Toggle link to show more or less -->
 						<a href="javascript:void(0);" id="toggleBtn">Read more</a>
-					  
-						<!-- <img src="/images/cbag12.png" alt="Coffee farming image"> -->
+					  </div>	
+				</div>
+				<div class="col-md-6 col-lg-6">
+					<div class="coffee_service_image">
+						<img src="images/seed3.jpeg"  width="100%" height="500px" alt="image" />
 					</div>
-					  
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--Counter Section-->
-	<!--<div class="clv_counter_wrapper clv_section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-6 col-md-6">
-					<div class="clv_heading white_heading">
-						<h3>We Are Experts in Coffee Farming</h3>
-						<div class="clv_underline"><img src="images/coffee_underline.png" alt="Coffee Underline" /></div>
-						<p>With years of experience in sustainable coffee farming, we focus on quality and environmental stewardship. Our passion for coffee drives us to cultivate the finest beans while supporting local communities and promoting ethical practices.</p>
-					</div>
-					
-				</div>
-			</div>
-			<div class="counter_section">
-				<div class="row">
-					<div class="col-lg-3 col-md-3">
-						<div class="counter_block">
-							<div class="counter_img">
-								<span class="red_bg"><img src="images/counter_customer.png" alt="image" class="img-fluid" /></span>
-							</div>
-							<div class="counter_text">
-								<h4><span class="count_no" data-to="26" data-speed="3000">26</span><span>k+</span></h4>
-								<h5>happy customers</h5>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-3">
-						<div class="counter_block">
-							<div class="counter_img">
-								<span class="yellow_bg"><img src="images/counter_project.png" alt="image" class="img-fluid" /></span>
-							</div>
-							<div class="counter_text">
-								<h4><span class="count_no" data-to="700" data-speed="3000">700</span><span>+</span></h4>
-								<h5>project complete</h5>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-3">
-						<div class="counter_block">
-							<div class="counter_img">
-								<span class="orange_bg"><img src="images/counter_branch.png" alt="image" class="img-fluid" /></span>
-							</div>
-							<div class="counter_text">
-								<h4><span class="count_no" data-to="200" data-speed="3000">200</span><span>+</span></h4>
-								<h5>world wide branch</h5>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-3">
-						<div class="counter_block">
-							<div class="counter_img">
-								<span class="blue_bg"><img src="images/counter_winner.png" alt="image" class="img-fluid" /></span>
-							</div>
-							<div class="counter_text">
-								<h4><span class="count_no" data-to="6" data-speed="3000">6</span><span>k+</span></h4>
-								<h5>award winner</h5>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	<!--Services-->
+
+
 	<div class="coffee_service_wrapper clv_section">
 		<div class="container">
 			<div class="row">
@@ -491,7 +452,7 @@ Version: 1.0.0
 						<p class="mb_4" id="introText2">
 						  The Legit Coffee Limited idea was hatched by four enthusiastic youth in 2018. Since then, plans to start a company started and Legit Coffee Limited was incorporated in 2024 and has grown to be a prominent coffee trader not only in Kayunga but throughout Uganda and the entire world.
 						  The journey has not been a bed of roses however with <strong>Determination, Desire, Dedication, Discipline and God’s grace</strong>, the Legit Coffee Limited dream became a reality.
-						  <span id="moreText" style="display:none;">
+						  <span id="moreText2" style="display:none;">
 							The desire to positively impact the livelihoods of coffee farmers in Kayunga district and Uganda forms the DNA of the operations of Legit Coffee Limited. The dream of the company aligns with the national coffee strategy and the Vision of UCDA which is to have an Inclusive, Transformative and Sustainable Coffee Industry. We are proud to play our role in bringing Ugandan coffee to you with our skilled staff handling all transactions from the small-scale farmers until you the final buyer.
 						  </span>
 						</p>
@@ -561,7 +522,100 @@ Version: 1.0.0
 			</div>
 		</div>
 	</div>
+
+
 	<!--Team-->
+
+
+<!-- Francis Kitaka Modal -->
+<div class="modal fade" id="bioFrancis" tabindex="-1" aria-labelledby="bioFrancisLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow rounded-4">
+      <div class="modal-body p-4">
+        <div class="row align-items-start">
+          <div class="col-md-4 text-center mb-3 mb-md-0">
+            <img src="/images/y.jpg" alt="Francis Kitaka" class="img-fluid rounded-3" style="max-height: 280px; object-fit: cover;">
+          </div>
+          <div class="col-md-8">
+            <h5 class="fw-bold mb-1">Francis Kitaka</h5>
+            <p class="text-muted mb-3">Chief Executive Officer (CEO)</p>
+            <p>Francis is a retired finance professional and teacher with vast experience in finance and a strong foundation in financial management, risk management, audit, and financial reporting. He is a strategic thinker with exceptional analytical skills and the ability to synthesize financial information. He has served banks, donor-funded projects, NGOs, and private institutions. In the coffee industry, Francis has acquired extensive knowledge of the value chain through research and hands-on experience.</p>
+          </div>
+		<button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Abdul Suleiman Modal -->
+<div class="modal fade" id="bioAbdul" tabindex="-1" aria-labelledby="bioAbdulLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow rounded-4">
+      <div class="modal-body p-4">
+        <div class="row align-items-start">
+          <div class="col-md-4 text-center mb-3 mb-md-0">
+            <img src="images/x.png" alt="Abdul Suleiman" class="img-fluid rounded-3" style="max-height: 280px; object-fit: cover;">
+          </div>
+          <div class="col-md-8">
+            <h5 class="fw-bold mb-1">Abdul Suleiman</h5>
+            <p class="text-muted mb-3">Chief Operating Officer (COO)</p>
+            <p>Abdul has over a decade of experience in the coffee industry. His passion, knowledge, and record as a coffee trader make him a critical asset to Legit Coffee Ltd. He builds strong relationships across the entire coffee value chain, from humble farmers to senior buyers. Known affectionately as the "Bean Man", Abdul ensures quality by closely understanding buyers' needs and farmer challenges alike.</p>
+          </div>
+		   <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Nathan Odur Modal -->
+<div class="modal fade" id="bioNathan" tabindex="-1" aria-labelledby="bioNathanLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow rounded-4">
+      <div class="modal-body p-4">
+        <div class="row align-items-start">
+          <div class="col-md-4 text-center mb-3 mb-md-0">
+            <img src="images/b.png" alt="Nathan Odur" class="img-fluid rounded-3" style="max-height: 280px; object-fit: cover;">
+          </div>
+          <div class="col-md-8">
+            <h5 class="fw-bold mb-1">Nathan Odur</h5>
+            <p class="text-muted mb-3">Senior Financial Advisor (SFA)</p>
+            <p>Nathan is a certified ACCA professional with extensive financial knowledge. He oversees financial planning and management at Legit Coffee Ltd. Prior to this, he worked for 7 years at a top-tier audit firm, rising to Manager level. He has experience in finance, audit, and advisory services — including developing anti-money laundering policies and reviewing internal controls for global investment firms.</p>
+          </div>
+		   <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sharon Modal -->
+<div class="modal fade" id="bioSharon" tabindex="-1" aria-labelledby="bioSharonLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow rounded-4">
+      <div class="modal-body p-4">
+        <div class="row align-items-start">
+          <div class="col-md-4 text-center mb-3 mb-md-0">
+            <img src="images/z.jpg" alt="Nansubuga Regina Sharon" class="img-fluid rounded-3" style="max-height: 280px; object-fit: cover;">
+          </div>
+          <div class="col-md-8">
+            <h5 class="fw-bold mb-1">Nansubuga Regina Sharon</h5>
+            <p class="text-muted mb-3">Head Of Administration (HOA)</p>
+            <p>Sharon is a teacher by profession with a deep interest in the coffee industry. She dedicates her time to interacting with coffee farmers to understand their challenges and provide practical interventions. Her focus on supporting small-scale farmers helps build long-term trust, quality assurance, and reliable stock relationships for Legit Coffee Ltd.</p>
+          </div>
+			<button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+	
 	<div class="dairy_team_wrapper clv_section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -581,95 +635,58 @@ Version: 1.0.0
 							<div class="swiper-wrapper">
 								
 								<div class="swiper-slide">
+	<div class="card team_slide shadow-sm border-0 rounded-4 overflow-hidden h-200 text-center">
+		<div class="team_image">
+			<img src="/images/y.jpg" alt="Francis Kitaka" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;">
+		</div>
+		<div class="card-body coffee_team_details">
+			<h5 class="card-title mb-1 fw-bold">Francis Kitaka</h5>
+			<p class="text-muted mb-0">Chief Executive Officer (CEO)</p>
+			<button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#bioFrancis">Read Bio</button>
+		</div>
+	</div>
+</div>
 
-									<div class="team_slide">
-										<div class="team_image">
-											<img src="/images/y.jpg" alt="image" class="img-fluid" />
-										</div>
-										<div class="coffee_team_details">
-											
-											<h3>Francis Kitaka</h3>
-											<h5>Chief Executive Officer (CEO)</h5>
-											<br>
-											<p>
-												Francis is retired finance professional and teacher with vast experience in finance and strong foundation in financial management, risk management, audit, and financial reporting. 
-												He is a strategic thinker with exceptional analytical skills and an ability to synthesize financial information. 
-												Francis has been involved in the provision of financial services to various institutions ranging from private companies, banks, donor funded projects, government and non-governmental organisations. In the coffee industry, 
-												Francis has acquired extensive knowledge about the coffee value chain though research and hands on experience.
-											</p>
-										</div>
-									</div>
+<div class="swiper-slide">
+	<div class="card team_slide shadow-sm border-0 rounded-4 overflow-hidden h-200 text-center">
+		<div class="team_image">
+			<img src="images/x.png" alt="Abdul Suleiman" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;">
+		</div>
+		<div class="card-body coffee_team_details">
+			<h5 class="card-title mb-1 fw-bold">Abdul Suleiman</h5>
+			<p class="text-muted mb-0">Chief Operating Officer (COO)</p>
+			<button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#bioAbdul">Read Bio</button>
+		</div>
+	</div>
+</div>
 
-								</div>
+<div class="swiper-slide">
+	<div class="card team_slide shadow-sm border-0 rounded-4 overflow-hidden h-200 text-center">
+		<div class="team_image">
+			<img src="images/b.png" alt="Nathan Odur" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;">
+		</div>
+		<div class="card-body coffee_team_details">
+			<h5 class="card-title mb-1 fw-bold">Nathan Odur</h5>
+			<p class="text-muted mb-0">Senior Financial Advisor (SFA)</p>
+			<button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#bioNathan">Read Bio</button>
+		</div>
+	</div>
+</div>
 
-								<div class="swiper-slide">
+<div class="swiper-slide">
+	<div class="card team_slide shadow-sm border-0 rounded-4 overflow-hidden h-200 text-center">
+		<div class="team_image">
+			<img src="images/z.jpg" alt="Nansubuga Regina Sharon" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;">
+		</div>
+		<div class="card-body coffee_team_details">
+			<h5 class="card-title mb-1 fw-bold">Nansubuga Regina Sharon</h5>
+			<p class="text-muted mb-0">Head Of Administration (HOA)</p>
+			<button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#bioSharon">Read Bio</button>
 
-									<div class="team_slide">
+		</div>
+	</div>
+</div>
 
-										<div class="team_image">
-											<img src="images/x.png" class="img-fluid" />
-										</div>
-										<div class="coffee_team_details">
-											
-											<h3>Abdul Suleiman</h3>
-											<h5>Chief Operating Officer (COO)</h5>
-											<br>
-											<p>
-												Abdul has over a decade of experience in the coffee industry. 
-												He is a true coffee professional and a gentleman in business. 
-												His extensive passion and knowledge about coffee and his impeccable record as a coffee trader makes Abdul 
-												an extremely valuable resource for the coffee industry and Legit Coffee Limited who procure coffee from small scale farmers and processors.
-												 He has a remarkable empathy and ability to communicate with actors throughout the whole value chain and can relate to the humblest coffee farmer, as to the most senior of buyers. 
-												 Abdul spends time learning a buyer’s needs and quality requirements. 
-												In Legit Coffee company he is the “Bean man”
-											</p>
-										</div>
-									</div>
-
-								</div>
-
-								<div class="swiper-slide">
-									<div class="team_slide">
-										<div class="team_image">
-											<img src="images/b.png" alt="image" class="img-fluid" />
-										</div>
-										<div class="coffee_team_details">
-											
-											<h3>Nathan Odur</h3>
-											<h5>Senior Financial Advicer (SFA)</h5>
-											<br>
-											<p>
-												Nathan is the senior financial advisor of Legit coffee company. 
-												He is an ACCA and has extensive financial knowledge. 
-												He is responsible for all aspects of financial planning and management in legit Coffee Limited. 
-												Before Legit Coffee Ltd, Nathan has worked at a professional audit firm (a big 4 firm) for 7 years progressing to Manager level. 
-												While there, he first worked in Finance, 
-												then Audit before moving into advisory Services where he specialised in developing anti-money 
-												laundering policies for global investment organisations and conducting reviews of internal controls and processes. 
-											</p>
-										</div>
-									</div>
-								</div>
-
-								<div class="swiper-slide">
-									<div class="team_slide">
-										<div class="team_image">
-											<img src="images/z.jpg" alt="image" class="img-fluid" />
-										</div>
-										<div class="coffee_team_details">
-											
-											<h3>Nansubuga Regina Sharon</h3>
-											<h5>Head Of Administration (HOA)</h5>
-											<br>
-											<p>
-												Sharon is a teacher by profession with a high desire in the coffee industry. 
-												She spends most of her free time interacting with coffee farmers to understand 
-												their major challenges in order to come up with interventions that not only benefit 
-												the small-scale farmers but also provide the reliability of quality and stock that will create long lasting relationships. 
-											</p>
-										</div>
-									</div>
-								</div>
 								
 							</div>
 						</div>
@@ -803,9 +820,11 @@ Version: 1.0.0
 			<div class="row justify-content-center">
 				<div class="col-lg-6 col-md-6">
 					<div class="clv_heading white_heading">
-						<h3>Our Shop</h3>
-						<!-- <div class="clv_underline"><img src="images/coffee_underline.png" alt="Coffee Underline" /></div> -->
-						<p>Discover our curated selection of high-quality coffee products. From freshly roasted beans to essential brewing equipment, we have everything you need to elevate your coffee experience.</p>
+						<h3>Our Products</h3>
+						<!-- <p>
+							Discover our curated selection of high-quality coffee products. From freshly roasted beans to essential brewing equipment, 
+							we have everything you need to elevate your coffee experience.
+						</p> -->
 					</div>
 				</div>
 			</div>
@@ -816,49 +835,53 @@ Version: 1.0.0
 							<div class="swiper-wrapper">
 
 								<div class="swiper-slide">
-									<div class="garden_shop_slide">
+									<div class="card garden_shop_slide shadow-sm border-0 rounded-4 overflow-hidden h-100">
 										<div class="item_image">
-											<img src="images/new_legit/ren1.jpg" alt="Coffee Beans" class="img-fluid" />
+											<img src="images/new_legit/ren1.jpg" alt="Robusta screen15" class="card-img-top img-fluid" style="height: 250px; object-fit: cover;">
 										</div>
-										<div class="item_details">
-											<div class="item_name">
-												<h5>FAQ Robusta screen12</h5>
-											</div>
-											<!-- <h6><span><i class="fa fa-usd" aria-hidden="true"></i></span>15</h6> -->
+										<div class="card-body item_details text-center">
+											<h5 class="card-title item_name fw-semibold text-dark mb-1">Robusta screen15</h5>
+											<!-- <h6 class="text-muted"><i class="fa fa-usd me-1"></i>15</h6> -->
 										</div>
-										<!-- <span class="label">10% off</span> -->
 									</div>
 								</div>
+
 								<div class="swiper-slide">
-									<div class="garden_shop_slide">
+									<div class="card garden_shop_slide shadow-sm border-0 rounded-4 overflow-hidden h-100">
 										<div class="item_image">
-											<img src="images/new_legit/ren2.jpg" alt="Coffee Maker" class="img-fluid" />
+											<img src="images/new_legit/ren2.jpg" alt="FAQ Robusta" class="card-img-top img-fluid" style="height: 250px; object-fit: cover;">
 										</div>
-										<div class="item_details">
-											<div class="item_name">
-												<h5>FAQ Robusta screen15</h5>
-											</div>
-											<!-- <h6><span><i class="fa fa-usd" aria-hidden="true"></i></span>80</h6> -->
+										<div class="card-body item_details text-center">
+											<h5 class="card-title item_name fw-semibold text-dark mb-1">FAQ Robusta</h5>
+											<!-- <h6 class="text-muted"><i class="fa fa-usd me-1"></i>80</h6> -->
 										</div>
-										<!-- <span class="label">15% off</span> -->
 									</div>
 								</div>
+
 								<div class="swiper-slide">
-									<div class="garden_shop_slide">
+									<div class="card garden_shop_slide shadow-sm border-0 rounded-4 overflow-hidden h-100">
 										<div class="item_image">
-											<img src="images/new_legit/ren3.jpg" alt="Coffee Cup" class="img-fluid" />
+											<img src="images/p2.jpg" alt="Arabica Coffee" class="card-img-top img-fluid" style="height: 250px; object-fit: cover;">
 										</div>
-										<div class="item_details">
-											<div class="item_name">
-												<h5>FAQ Robusta screen18</h5>
-											</div>
-											<!-- <h6><span><i class="fa fa-usd" aria-hidden="true"></i></span>50</h6> -->
+										<div class="card-body item_details text-center">
+											<h5 class="card-title item_name fw-semibold text-dark mb-1">Arabica Coffee</h5>
+											<!-- <h6 class="text-muted"><i class="fa fa-usd me-1"></i>80</h6> -->
 										</div>
-										<!-- <span class="label">20% off</span> -->
 									</div>
 								</div>
-								
-								
+
+								<div class="swiper-slide">
+									<div class="card garden_shop_slide shadow-sm border-0 rounded-4 overflow-hidden h-100">
+										<div class="item_image">
+											<img src="images/new_legit/ren3.jpg" alt="Robusta screen18" class="card-img-top img-fluid" style="height: 250px; object-fit: cover;">
+										</div>
+										<div class="card-body item_details text-center">
+											<h5 class="card-title item_name fw-semibold text-dark mb-1">Robusta screen18</h5>
+											<!-- <h6 class="text-muted"><i class="fa fa-usd me-1"></i>50</h6> -->
+										</div>
+									</div>
+								</div>
+
 							</div>
 						</div>
 						<!-- Add Arrows -->
@@ -879,131 +902,7 @@ Version: 1.0.0
 			</div>
 		</div>
 	</div>
-	
-	<!--Pricing-->
-	<!-- <div class="coffee_pricing_wrapper clv_section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-6 col-md-6">
-					<div class="clv_heading">
-						<h3>Our impact</h3>
-						<div class="clv_underline"><img src="images/coffee_underline.png" alt="Coffee Underline" /></div>
-						<p>Choose from our selection of premium coffee subscriptions. Enjoy freshly roasted coffee delivered right to your door.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12 col-md-12">
-					<div class="coffee_pricing_section">
-						<div class="coffee_pricing_toggle">
-							<p class="fieldset">
-								<input type="radio" name="duration-1" value="monthly" id="monthly-1" class="my_toggle" checked>
-								<label for="monthly-1">Monthly</label>
-								<input type="radio" name="duration-1" value="yearly" id="yearly-1" class="my_toggle">
-								<label for="yearly-1">Yearly</label>
-								<span class="pr_switch"></span>
-							</p>
-						</div>
-						<div class="pricing_table_section">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="pricing-group">
-										<div class="coffee_pricing_block monthly">
-											<div class="pricing_header basic">
-												<h5>Basic</h5>
-												<!-- <h3><span><i class="fa fa-usd" aria-hidden="true"></i></span>15</h3>
-											</div>
-											<ul>
-												<li><p>1 Bag of Coffee Beans (12oz)</p></li>
-												<li><p>Exclusive Coffee Blend</p></li>
-												<li><p>Free Shipping</p></li>
-												<li><p>Access to Special Offers</p></li>
-											</ul>
-											<a href="javascript:;">Purchase</a>
-										</div>
-										<div class="coffee_pricing_block yearly">
-											<div class="pricing_header basic">
-												<h5>Basic</h5>
-												<!-- <h3><span><i class="fa fa-usd" aria-hidden="true"></i></span>150</h3>
-											</div>
-											<ul>
-												<li><p>1 Bag of Coffee Beans (12oz) per month</p></li>
-												<li><p>Exclusive Coffee Blend</p></li>
-												<li><p>Free Shipping</p></li>
-												<li><p>Access to Special Offers</p></li>
-											</ul>
-											<a href="javascript:;">Purchase</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="pricing-group">
-										<div class="coffee_pricing_block monthly">
-											<div class="pricing_header premium">
-												<h5>Premium</h5>
-												<!-- <h3><span><i class="fa fa-usd" aria-hidden="true"></i></span>30</h3> --
-											</div>
-											<ul>
-												<li><p>2 Bags of Coffee Beans (12oz)</p></li>
-												<li><p>Exclusive Coffee Blend</p></li>
-												<li><p>Free Shipping</p></li>
-												<li><p>Access to Special Offers</p></li>
-											</ul>
-											<a href="javascript:;">Purchase</a>
-										</div>
-										<div class="coffee_pricing_block yearly">
-											<div class="pricing_header premium">
-												<h5>Premium</h5>
-												<!-- <h3><span><i class="fa fa-usd" aria-hidden="true"></i></span>300</h3> -
-											</div>
-											<ul>
-												<li><p>2 Bags of Coffee Beans (12oz) per month</p></li>
-												<li><p>Exclusive Coffee Blend</p></li>
-												<li><p>Free Shipping</p></li>
-												<li><p>Access to Special Offers</p></li>
-											</ul>
-											<a href="javascript:;">Purchase</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="pricing-group">
-										<div class="coffee_pricing_block monthly">
-											<div class="pricing_header ultimate">
-												<h5>Ultimate</h5>
-												<!-- <h3><span><i class="fa fa-usd" aria-hidden="true"></i></span>50</h3> -
-											</div>
-											<ul>
-												<li><p>3 Bags of Coffee Beans (12oz)</p></li>
-												<li><p>Exclusive Coffee Blend</p></li>
-												<li><p>Free Shipping</p></li>
-												<li><p>Access to Special Offers</p></li>
-											</ul>
-											<a href="javascript:;">Purchase</a>
-										</div>
-										<div class="coffee_pricing_block yearly">
-											<div class="pricing_header ultimate">
-												<h5>Ultimate</h5>
-												<!-- <h3><span><i class="fa fa-usd" aria-hidden="true"></i></span>500</h3> --
-											</div>
-											<ul>
-												<li><p>3 Bags of Coffee Beans (12oz) per month</p></li>
-												<li><p>Exclusive Coffee Blend</p></li>
-												<li><p>Free Shipping</p></li>
-												<li><p>Access to Special Offers</p></li>
-											</ul>
-											<a href="javascript:;">Purchase</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	
+
 	<!--Partner
 	<div class="clv_partner_wrapper clv_section">
 		<div class="container">
@@ -1129,181 +1028,67 @@ Version: 1.0.0
 		</div>
 	</div>
 	
-			<!--Footer-->
-			<div class="clv_footer_wrapper clv_section">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-3 col-lg-3">
-							<div class="footer_block">
-								<div class="footer_logo"><a href="javascript:;"><img src="images/footer_logo.png" alt="image" width="200px"/></a></div>
-								<p><span><svg 
-										 xmlns="http://www.w3.org/2000/svg"
-										 xmlns:xlink="http://www.w3.org/1999/xlink"
-										 width="16px" height="16px">
-										<defs>
-										<filter id="Filter_0">
-											<feFlood flood-color="#222222" flood-opacity="1" result="floodOut" />
-											<feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
-											<feBlend mode="normal" in="compOut" in2="SourceGraphic" />
-										</filter>
+		<!--Footer-->
+<div class="clv_footer_wrapper clv_section" style="color: #fff; padding: 60px 0;">
+    <div class="container">
+        <div class="row text-md-star justify-content-center">
+
+            <!-- Brand & Description -->
+            <div class="col-md-3 col-lg-3 mb-4">
+                <div class="footer_block">
+                    <div class="footer_logo mb-3">
+                        <a href="index.html" class="text-decoration-none"><img src="images/footer_logo.png" alt="Legit Coffee Logo" width="180" /></a>
+                    </div>
+                    <p>Legit Coffee Ltd is a Ugandan coffee company committed to providing high-quality coffee products while empowering local farmers and promoting sustainability.</p>
+                    <ul class="agri_social_links d-flex justify-content-center justify-content-md-start mt-3">
+                        <li class="me-2"><a href="#" class="text-decoration-none"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li class="me-2"><a href="#" class="text-decoration-none"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li class="me-2"><a href="#" class="text-decoration-none"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Location Info -->
+            <div class="col-md-3 col-lg-3 mb-4">
+                <div class="footer_block">
+                    <div class="footer_heading mb-3">
+                        <h4 class="text-white">Location</h4>
+                    </div>
+                    <p>Namaliri, Kayunga Road</p>
+                    <p>Tel: (+256) 788935300<br>Tel: (+256) 703607845</p>
+                    <p>Email: <a href="mailto:info@legitcoffeeug.com" style="color: #fff;" class="text-decoration-none">info@legitcoffeeug.com</a></p>
+                </div>
+            </div>
+
+            <!-- Useful Links -->
+            <div class="col-md-3 col-lg-3 mb-4">
+                <div class="footer_block">
+                    <div class="footer_heading mb-3">
+                        <h4 class="text-white">Useful Links</h4>
+                    </div>
+                    <ul class="useful_links list-unstyled">
+                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right me-2"></i>Home</a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right me-2"></i>About Us</a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right me-2"></i>Contact</a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right me-2"></i>Services</a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right me-2"></i>Gallery</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <p class="mb-0" style="color: #ccc;">&copy; <script>document.write(new Date().getFullYear())</script> Legit Coffee Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 		
-										</defs>
-										<g filter="url(#Filter_0)">
-										<path fill-rule="evenodd"  fill="#222222"
-										 d="M14.873,0.856 C14.815,0.856 14.700,0.856 14.643,0.913 L0.850,6.660 C0.620,6.776 0.505,6.948 0.505,7.176 C0.505,7.465 0.677,7.695 0.965,7.752 L6.942,9.189 C7.057,9.189 7.114,9.305 7.172,9.419 L8.608,15.396 C8.666,15.626 8.896,15.855 9.183,15.855 C9.413,15.855 9.643,15.683 9.700,15.511 L15.447,1.718 C15.447,1.660 15.505,1.603 15.505,1.488 C15.447,1.085 15.217,0.856 14.873,0.856 ZM9.355,8.902 L9.068,7.695 C9.011,7.465 8.838,7.350 8.666,7.292 L7.459,7.005 C7.172,6.948 7.172,6.545 7.401,6.487 L11.022,4.993 C11.252,4.878 11.482,5.109 11.424,5.395 L9.930,9.017 C9.758,9.189 9.413,9.131 9.355,8.902 Z"/>
-										</g>
-										</svg></span>Namaliri kayunga road</p>
-								<p><span><svg 
-										 xmlns="http://www.w3.org/2000/svg"
-										 xmlns:xlink="http://www.w3.org/1999/xlink"
-										 width="16px" height="15px">
-										
-										<g filter="url(#Filter_0)">
-										<path fill-rule="evenodd" fill="#222222"
-										 d="M13.866,7.235 C13.607,5.721 12.892,4.344 11.802,3.254 C10.653,2.108 9.197,1.381 7.592,1.156 L7.755,-0.002 C9.613,0.257 11.296,1.096 12.626,2.427 C13.888,3.692 14.716,5.284 15.019,7.039 L13.866,7.235 ZM10.537,4.459 C11.296,5.222 11.796,6.181 11.977,7.238 L10.824,7.436 C10.684,6.617 10.300,5.874 9.713,5.287 C9.091,4.666 8.304,4.276 7.439,4.155 L7.601,2.996 C8.719,3.151 9.734,3.657 10.537,4.459 ZM4.909,8.182 C5.709,9.162 6.611,10.033 7.689,10.711 C7.920,10.854 8.176,10.960 8.417,11.092 C8.538,11.160 8.623,11.139 8.723,11.035 C9.088,10.661 9.460,10.293 9.831,9.924 C10.318,9.440 10.931,9.440 11.421,9.924 C12.017,10.516 12.614,11.110 13.207,11.707 C13.704,12.207 13.701,12.818 13.201,13.324 C12.864,13.665 12.505,13.989 12.186,14.345 C11.721,14.866 11.140,15.035 10.472,14.997 C9.500,14.944 8.607,14.623 7.745,14.205 C5.831,13.275 4.194,11.985 2.823,10.355 C1.808,9.150 0.971,7.834 0.422,6.355 C0.153,5.639 -0.038,4.906 0.022,4.129 C0.059,3.651 0.237,3.242 0.590,2.907 C0.971,2.546 1.330,2.168 1.705,1.800 C2.192,1.319 2.804,1.319 3.295,1.797 C3.598,2.093 3.894,2.396 4.194,2.696 C4.485,2.988 4.775,3.277 5.065,3.570 C5.578,4.085 5.578,4.684 5.069,5.197 C4.703,5.565 4.341,5.933 3.969,6.293 C3.873,6.390 3.863,6.468 3.913,6.586 C4.160,7.173 4.513,7.694 4.909,8.182 Z"/>
-										</g>
-										</svg></span> (+256) 788935300</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+256) 703607845 </p>
-										</p>
-								<p><span><svg 
-									 xmlns="http://www.w3.org/2000/svg"
-									 xmlns:xlink="http://www.w3.org/1999/xlink"
-									 width="16px" height="16px">
-									<defs>
-									<filter id="Filter_0">
-										<feFlood flood-color="#222222" flood-opacity="1" result="floodOut" />
-										<feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
-										<feBlend mode="normal" in="compOut" in2="SourceGraphic" />
-									</filter>
-		
-									</defs>
-									<g filter="url(#Filter_0)">
-									<path fill-rule="evenodd"  fill="#222222"
-									 d="M16.000,5.535 C16.000,4.982 15.680,4.507 15.280,4.191 L8.000,-0.002 L0.720,4.191 C0.320,4.507 0.000,4.982 0.000,5.535 L0.000,13.447 C0.000,14.317 0.720,15.028 1.600,15.028 L14.400,15.028 C15.280,15.028 16.000,14.317 16.000,13.447 L16.000,5.535 ZM8.000,9.491 L1.360,5.376 L8.000,1.579 L14.640,5.376 L8.000,9.491 Z"/>
-									</g>
-									</svg></span> 	
-									info@legitcoffeeug.com
-									</p>
-								<!-- <ul class="agri_social_links">
-									<li><a href="javascript:;"><span><i class="fa fa-facebook" aria-hidden="true"></i></span></a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-linkedin" aria-hidden="true"></i></span></a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-youtube-play" aria-hidden="true"></i></span></a></li>
-								</ul> -->
-							</div>
-						</div>
-						<div class="col-md-3 col-lg-3">
-							<div class="footer_block">
-								<div class="footer_heading">
-									<h4>information</h4>
-									<img src="images/coffee_underline2.png" alt="image" />
-								</div>
-								<ul class="useful_links">
-									<li><a href="index.html"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Home</a></li>
-									<li><a href="about.html"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>About Us</a></li>
-									<li><a href="service.html"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Services</a></li>
-									<li><a href="contact.html"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Contact us</a></li>
-									<li><a href="gallery.html"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Gallery</a></li>
-									<li><a href="#"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Products</a></li>
-								</ul>
-								<!-- <ul class="useful_links float">
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Ordering Services</a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Shipping & Delivery</a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>FAQ</a></li>
-								</ul> -->
-							</div>
-						</div>
-						<!-- <div class="col-md-3 col-lg-3">
-							<div class="footer_block">
-								<div class="footer_heading">
-									<h4>Products</h4>
-									<img src="images/coffee_underline2.png" alt="image" />
-								</div>
-								<ul class="useful_links">
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Vegetables</a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Staples & Grocery</a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Dairy & Breakfast</a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Soft Drinks</a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Biscuits</a></li>
-								</ul>
-							</div>
-						</div>
-	
-						<div class="col-md-3 col-lg-3">
-							<div class="footer_block">
-								<div class="footer_heading">
-									<h4>Services</h4>
-									<img src="images/coffee_underline2.png" alt="image" />
-								</div>
-								<ul class="useful_links">
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Vegetables</a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Staples & Grocery</a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Dairy & Breakfast</a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Soft Drinks</a></li>
-									<li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Biscuits</a></li>
-								</ul>
-							</div>
-						</div> -->
-	
-						<!-- <div class="col-md-3 col-lg-3">
-							<div class="footer_block">
-								<div class="footer_heading">
-									<h4>latest news</h4>
-									<img src="images/coffee_underline2.png" alt="image" />
-								</div>
-								<div class="footer_post_section">
-									<div class="footer_post_slide">
-										<span><i class="fa fa-twitter" aria-hidden="true"></i></span>
-										<div class="blog_links">
-											<p>Excepteur occaecat cupid proent.</p>
-											<a href="javascript:;">https://T.Co/Sr45bvMJU6</a>
-										</div>
-									</div>
-									<div class="footer_post_slide">
-										<span><i class="fa fa-twitter" aria-hidden="true"></i></span>
-										<div class="blog_links">
-											<p>Occaecat ther cupidatat proent.</p>
-											<a href="javascript:;">https://T.Co/Sr45bvMJU6</a>
-										</div>
-									</div>
-									<div class="footer_post_slide">
-										<span><i class="fa fa-twitter" aria-hidden="true"></i></span>
-										<div class="blog_links">
-											<p>Excepteur occaecat cupid proent.</p>
-											<a href="javascript:;">https://T.Co/Sr45bvMJU6</a>
-										</div>
-									</div>
-									<div class="footer_post_slide">
-										<span><i class="fa fa-twitter" aria-hidden="true"></i></span>
-										<div class="blog_links">
-											<p>Excepteur occaecat cupid proent.</p>
-											<a href="#">https://T.Co/Sr45bvMJU6</a>
-										</div>
-									</div>
-									<div class="footer_post_slide">
-										<span><i class="fa fa-twitter" aria-hidden="true"></i></span>
-										<div class="blog_links">
-											<p>Occaecat ther cupidatat proent.</p>
-											<a href="#">https://T.Co/Sr45bvMJU6</a>
-										</div>
-									</div>
-									<div class="footer_post_slide">
-										<span><i class="fa fa-twitter" aria-hidden="true"></i></span>
-										<div class="blog_links">
-											<p>Excepteur occaecat cupid proent.</p>
-											<a href="#">https://T.Co/Sr45bvMJU6</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div> -->
-					</div>
-				</div>
-			</div>
-		<!--Copyright-->
-		<div class="clv_copyright_wrapper">
-			<p>copyright &copy; 2025 <a href="javascript:;">Legit Coffee LTD.</a> all right reserved.</p>
-			<small style="font-size: 14px;"><a href="javascript:;">Powered by</a> Ugacloud Services</small>
-		</div>
 
 	<!--Popup-->
 
@@ -1429,6 +1214,7 @@ Version: 1.0.0
 				</div>
 			</div>
 		</div> -->
+
 		<!--SignIn Popup-->
 		<!-- <div class="signin_wrapper">
 			<div class="signup_inner">
@@ -1482,8 +1268,19 @@ Version: 1.0.0
 			</div>
 		</div> -->
     <!--Profile Toggle-->
+
     <!--<div class="profile_toggle"><a href="javascript:;"><img src="images/login.gif" alt=""></a></div>-->
 </div>
+
+
+
+
+
+
+<!-- Before closing-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
 <!--Main js file Style-->
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>

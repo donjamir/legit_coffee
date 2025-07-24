@@ -6403,7 +6403,7 @@ button.close {
   -webkit-appearance: none;
 }
 
-.modal-open {
+/* .modal-open {
   overflow: hidden;
 }
 
@@ -6412,17 +6412,7 @@ button.close {
   overflow-y: auto;
 }
 
-.modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1050;
-  display: none;
-  overflow: hidden;
-  outline: 0;
-}
+
 
 .modal-dialog {
   position: relative;
@@ -6437,14 +6427,14 @@ button.close {
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   -webkit-transform: translate(0, -25%);
   transform: translate(0, -25%);
-}
+} */
 
-@media screen and (prefers-reduced-motion: reduce) {
+/* @media screen and (prefers-reduced-motion: reduce) {
   .modal.fade .modal-dialog {
     transition: none;
   }
-}
-
+} */
+/* 
 .modal.show .modal-dialog {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
@@ -6573,8 +6563,9 @@ button.close {
 @media (min-width: 992px) {
   .modal-lg {
     max-width: 800px;
-  }
-}
+  } 
+}*/
+
 
 .tooltip {
   position: absolute;
