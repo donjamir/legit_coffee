@@ -816,5 +816,29 @@ Version: 1.0.0
 	});
   </script>
 
+<script>
+  var swiper = new Swiper(".dairy_team_slider .swiper-container", {
+    loop: true,
+    autoplay: {
+      delay: 3000, // Adjust delay as needed (in ms)
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".team_right",
+      prevEl: ".team_left",
+    },
+    slidesPerView: 1,
+    spaceBetween: 30,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 4,
+      }
+    }
+  });
+</script>
+
 </body>
 </html>
