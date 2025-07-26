@@ -200,45 +200,57 @@ Version: 1.0.0
 			</div>
 		</div>
 
-		<!--Features-->
-		<div class="clv_features_wrapper clv_section">
-			<div class="container">
-				<div class="row">
+				<!--Services-->
+	<div class="coffee_service_wrapper clv_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-lg-6">
+
+					<div class=" p-4 mb-4" x-data="{ showMore: false }">
+					<h5 class="fw-bold mb-3">Our Services</h5>
+					<div class="position-relative" style="max-height: 350px; overflow: hidden;" 
+						:style="showMore ? 'max-height: 350px; overflow-y:auto;' : 'max-height: 350px; overflow: hidden;'">
+						<h5 class="fw-bold mt-3">Coffee Farm Startup &amp; Coffee Cuttings Supply</h5>
+							We hope establish coffee farms with the primary goal of producing and supplying high-quality coffee
+							cuttings to farmers and agribusinesses. Our mission is to support coffee growers by providing disease-
+							resistant, high-yield varieties that enhance productivity and sustainability.
+
+							<h5 class="fw-bold mt-3">Coffee Agro-Inputs Shop &amp; Advisory Services</h5>
+							We intend to set up a Coffee Agro-Inputs Shop in Kayunga and Mukono to provide our smallholder
+							farmers with high-quality agricultural products and expert advisory services at subsidized prices in order
+							to enhance coffee productivity and profitability. Our goal is to support coffee growers with the right inputs
+							and knowledge to achieve sustainable and high-yield farming.
+						<p class="mb-0" id="introText">
+							<h5 class="fw-bold mt-3">Coffee aggregation and trading</h5>
+							We are dedicated to providing reliable coffee trading and aggregation services, connecting coffee farmers
+							with local and international markets. Our goal is to ensure fair prices, improve market access, and
+							enhance the value of Ugandan coffee through high-quality sourcing and efficient supply chain
+							management.
+
+							<h5 class="fw-bold mt-3">Coffee Processing &amp; Value Addition Services</h5>
+							We are passionate about coffee processing and value addition services that enhance quality, increase
+							market value, and create premium coffee products. Our services include coffee drying, hulling and
+							roasting to ensure high standards for local and international markets. Partner with us to transform raw
+							coffee into high-quality, market-ready products! Include Link
 					
-					<!-- <div class="col-md-4 col-lg-4">
-						<div class="feature_block">
-							<div class="feature_img">
-								<img src="images/agri_product.png" alt="Agricultural Products" />
-							</div>
-							<h3>Agricultural Products</h3>
-							<p>Discover our range of agricultural products designed to enhance farming efficiency and sustainability.</p>
-							<a href="javascript:;" class="clv_btn">Read More</a>
-						</div>
+						</span>
+						</p>
 					</div>
-					<div class="col-md-4 col-lg-4">
-						<div class="feature_block">
-							<div class="feature_img">
-								<img src="images/agri_dairy.png" alt="Fresh Dairy Products" />
-							</div>
-							<h3>Fresh Dairy Products</h3>
-							<p>Experience the freshness of our dairy products, sourced from local farms with care and quality.</p>
-							<a href="javascript:;" class="clv_btn">Read More</a>
-						</div>
+
+					<div class="text-end mt-2">
+						<button @click="showMore = !showMore" x-text="showMore ? 'Read Less' : 'Read More'"></button>
 					</div>
-					<div class="col-md-4 col-lg-4">
-						<div class="feature_block">
-							<div class="feature_img">
-								<img src="images/agri_organic.png" alt="Organic Fertilizers" />
-							</div>
-							<h3>Organic Fertilizers</h3>
-							<p>Our organic fertilizers promote healthy growth and sustainable farming practices for your crops.</p>
-							<a href="javascript:;" class="clv_btn">Read More</a>
-						</div>
-					</div> -->
+					</div>
 				</div>
-				
+
+				<div class="col-md-6 col-lg-6">
+					<div class="coffee_service_image">
+						<img src="images/seed3.jpeg"  width="100%" height="500px" alt="image" />
+					</div>
+				</div>
 			</div>
 		</div>
+	</div>
 
 
 		<!--Counter Section-->
