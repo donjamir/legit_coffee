@@ -896,7 +896,7 @@ ul{
  *******************************************************/
 .clv_counter_wrapper{
 	position: relative;
-	background: url('/images/ron.jpeg') no-repeat center;
+	background: url('/images/p3.jpg') no-repeat center;
 	background-size: cover;
 	padding: 88px 0px 96px;
 	z-index: 1;
@@ -6353,7 +6353,7 @@ ul{
 /*Coffee About End*/
 /*Coffee Counter Start*/
 .index_v6 .clv_counter_wrapper{
-	background: url('/images/ron.jpeg') no-repeat center;
+	background: url('/images/p3.jpg') no-repeat center;
 	background-size: cover;
 	margin-top: 5rem;
 }
@@ -6462,7 +6462,7 @@ ul{
 /*Coffee Team Start*/
 .index_v6 .dairy_team_wrapper{
    background-color: unset;
-   background: url('/images/seed3.jpeg') no-repeat center;
+   background: url('/images/p3.jpg') no-repeat center;
    background-size: cover;
    position: relative;
    z-index: 1;
@@ -6652,7 +6652,7 @@ ul{
 /*Coffee Testimonial End*/
 /*Coffee Shop Start*/
 .index_v6 .garden_shop_wrapper{
-	background: url('/images/ron.jpeg') no-repeat center;
+	background: url('/images/p2.jpg') no-repeat center;
 	background-size: cover;
 	position: relative;
 	padding-bottom: 90px;
@@ -7050,7 +7050,7 @@ ul{
 /*Breadcrumb Start*/
 .breadcrumb_wrapper{
 	position: relative;
-	background: url('/images/man.jpeg') no-repeat center;
+	background: url('/images/p2.jpg') no-repeat center;
 	background-size: cover;
 	padding: 180px 0px 50px;
 	z-index: 1;
