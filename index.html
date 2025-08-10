@@ -59,6 +59,28 @@ Version: 1.0.0
 
   /* Ensure Bootstrap modal is on top */
  
+ /* Make the swiper-container horizontally scrollable on small screens */
+@media (max-width: 768px) {
+  .swiper-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    scroll-snap-type: x mandatory;
+    display: flex;
+    gap: 1rem; /* space between slides */
+  }
+
+  .swiper-wrapper {
+    flex-wrap: nowrap; /* prevent wrapping */
+    display: flex;
+  }
+
+  .swiper-slide {
+    flex: 0 0 auto; /* keep slides at their width */
+    scroll-snap-align: start;
+    min-width: 250px; /* adjust this to your desired slide width */
+  }
+}
+
 
 	</style>
 
@@ -771,7 +793,7 @@ quantity and quality of coffee exports to regional markets, including Europe and
 	</div>
 
 	
-<!-- Footer -->
+	<!-- Footer -->
 <footer class="clv_footer_wrapper clv_section bg-dark text-white pt-5 pb-4">
     <div class="container">
         <div class="row">
@@ -785,11 +807,12 @@ quantity and quality of coffee exports to regional markets, including Europe and
                     <p class="text-white">
 						Legit Coffee Ltd is a Ugandan coffee brand dedicated to providing premium-quality coffee 
 						while empowering local farmers and promoting sustainability.</p>
-                    <ul class="agri_social_links list-inline mt-3">
-                        <li class="list-inline-item"><a href="#" class="text-white text-decoration-none"><i class="fab fa-facebook-f"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-white text-decoration-none"><i class="fab fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-white text-decoration-none"><i class="fab fa-linkedin"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-white text-decoration-none"><i class="fab fa-youtube-play"></i></a></li>
+                    <ul class="agri_social_links list-inline mt-3"> 
+						<li class="list-inline-item"><a href="https://www.tiktok.com/@legit.coffee.limi?_t=ZM-8yHljTrLohB&_r=1" class="text-white text-decoration-none"><i class="fab fa-tiktok"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.instagram.com/legitcoffee_ug?igsh=NmNuNWtxMmlxdXhx" class="text-white text-decoration-none"><i class="fab fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href=" https://x.com/LegitCoffeeLtd" class="text-white text-decoration-none"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/company/legit-coffee-limited/" class="text-white text-decoration-none"><i class="fab fa-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a href="http://www.youtube.com/@LegitCoffeeLimited" class="text-white text-decoration-none"><i class="fab fa-youtube-play"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -809,17 +832,17 @@ quantity and quality of coffee exports to regional markets, including Europe and
                 <div class="footer_block">
                     <h5 class="footer_heading mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>Home</a></li>
-                        <li><a href="#" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>About Us</a></li>
-                        <li><a href="#" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>Our Products</a></li>
-                        <li><a href="#" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>Gallery</a></li>
-                        <li><a href="#" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>Contact</a></li>
+                        <li><a href="index.html" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>Home</a></li>
+                        <li><a href="about.html" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>About Us</a></li>
+                        <li><a href="service.html" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>Services</a></li>
+                        <li><a href="gallery.html" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>Gallery</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none"><i class="fa fa-angle-right me-2"></i>Contact</a></li>
                     </ul>
                 </div>
             </div>
 
             <!-- Newsletter Signup -->
-            <div class="col-md-3 mb-4">
+            <!-- <div class="col-md-3 mb-4">
                 <div class="footer_block">
                     <h5 class="footer_heading mb-3">Stay Updated</h5>
                     <p class="text-white">Subscribe to our newsletter to receive updates on new arrivals, promotions, and coffee stories.</p>
@@ -828,7 +851,7 @@ quantity and quality of coffee exports to regional markets, including Europe and
                         <button class="btn btn-outline-light" type="submit"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
-            </div>
+            </div> -->
 
         </div>
 
@@ -837,10 +860,10 @@ quantity and quality of coffee exports to regional markets, including Europe and
             <div class="col-md-6 text-center text-md-start">
                 <p class="mb-0">&copy; <script>document.write(new Date().getFullYear())</script> Legit Coffee Ltd. All rights reserved.</p>
             </div>
-            <div class="col-md-6 text-center text-md-end">
+            <!-- <div class="col-md-6 text-center text-md-end">
                 <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
                 <a href="#" class="text-white text-decoration-none">Terms of Service</a>
-            </div>
+            </div> -->
         </div>
     </div>
 </footer>
@@ -1223,7 +1246,7 @@ quantity and quality of coffee exports to regional markets, including Europe and
       prevEl: ".team_left",
     },
     slidesPerView: 1,
-    spaceBetween: 30,
+    spaceBetween: 25,
     breakpoints: {
       768: {
         slidesPerView: 2,
