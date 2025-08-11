@@ -249,7 +249,7 @@ Version: 1.0.0
       <!-- Form -->
       <div class="col-lg-8 mb-5">
         <h3 class="mb-4">Send Us a Message</h3>
-        <form id="contactForm">
+        <form id="contactForm" method="post">
           <div class="row g-3">
             <div class="col-md-6">
               <input type="text" name="name" class="form-control" placeholder="Name" required>
@@ -682,18 +682,25 @@ function initMap() {
 
 
 
-
-    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
   (function(){
-    emailjs.init("fCTrEVFQ02MYpRSxs");  // Replace with your EmailJS public key
+    emailjs.init("fCTrEVFQ02MYpRSxs"); // Replace with your EmailJS Public Key
   })();
 </script>
 
 
 
-<!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+    <!-- <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
 <script>
+  (function(){
+    emailjs.init("fCTrEVFQ02MYpRSxs");  // Replace with your EmailJS public key
+  })();
+</script> -->
+
+
+<!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+<!-- <script>
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -706,7 +713,29 @@ function initMap() {
          console.error(error);
       });
   });
+</script> -->
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Change these to your EmailJS Service ID & Template ID
+    const serviceID = "service_01blvrc";
+    const templateID = "template_hhxe6xc";
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        document.querySelector('.response').innerHTML = 
+          "<span style='color: green;'>✅ Message sent successfully!</span>";
+        this.reset();
+      })
+      .catch((err) => {
+        document.querySelector('.response').innerHTML = 
+          "<span style='color: red;'>❌ Failed to send: " + JSON.stringify(err) + "</span>";
+      });
+  });
 </script>
+
 
 </body>
 </html>
